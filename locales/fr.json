@@ -1,0 +1,6 @@
+{
+  "Common.Loading": "Chargement",
+  "HomePage.Greetings": "Bonjour {name}",
+  "HomePage.Title": "Bienvenue sur votre Next App",
+  "HomePage.User": "Utilisateur : {username}"
+}

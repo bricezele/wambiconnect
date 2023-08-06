@@ -1,3 +1,3 @@
 export const Assets = {
-  images: { logo: '/images/logo_appstud.png' }
+    images: {logo: '/images/logo.png'}
 }

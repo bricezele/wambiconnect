@@ -1,22 +1,22 @@
-import { IHttpClient } from '../../domain/models/IHttpClient'
-import { API_ENDPOINT } from '../../config'
-import { AxiosHttpClient } from '../../data/models/AxiosHttpClient'
-import { IUserProvider } from '../../domain/providers/IUserProvider'
-import { GithubUserProvider } from '../../data/providers/GithubUserProvider'
+import {IHttpClient} from '../../domain/models/IHttpClient'
+import {API_ENDPOINT, STRAPI_URL} from '../../config'
+import {AxiosHttpClient} from '../../data/models/AxiosHttpClient'
+import {IContentProvider} from "@/core/domain/providers/IContentProvider";
+import {StrapiContentProvider} from "@/core/data/providers/StrapiContentProvider";
 
 export interface Dependencies {
-  httpClient: IHttpClient
-  userProvider: IUserProvider
+    httpClient: IHttpClient
+    contentProvider: IContentProvider
 }
 
 export const createDependencies = (): Dependencies => {
-  const httpClient = new AxiosHttpClient(API_ENDPOINT)
+    const httpClient = new AxiosHttpClient(API_ENDPOINT)
+    const contentHttpClient = new AxiosHttpClient(`${STRAPI_URL}/api`)
 
-  const githubHttpClient = new AxiosHttpClient('https://api.github.com')
-  const githubUserProvider = new GithubUserProvider(githubHttpClient)
+    const contentProvider = new StrapiContentProvider(contentHttpClient)
 
-  return {
-    httpClient,
-    userProvider: githubUserProvider
-  }
+    return {
+        httpClient,
+        contentProvider
+    }
 }

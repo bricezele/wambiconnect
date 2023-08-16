@@ -1,6 +1,6 @@
-import {User} from '../../../domain/entities/user/User'
-import {DomainError} from '../../../domain/models/DomainError'
-import {IUserProvider} from '../../../domain/providers/IUserProvider'
+import {User} from '@/core/domain/entities/user/User'
+import {DomainError} from '@/core/domain/models/DomainError'
+import {IUserProvider} from '@/core/domain/providers/IUserProvider'
 import React from "react";
 
 export interface HomeViewModelState {
@@ -45,4 +45,5 @@ export class HomeViewModel {
             })
         }
     }
+
 }

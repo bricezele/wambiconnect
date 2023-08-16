@@ -1,83 +1,36 @@
-import React from "react"
-import styled from "styled-components"
-import LinkWrapper from "@/core/application/components/common/LinkWrapper";
-import {Routes} from "@/core/application/constants/routes";
-import {useIntl} from "react-intl";
-import {Locale} from "@/core/domain/enums/Locale";
-import Image from "next/image";
-import {Assets} from "@/core/application/constants/assets";
+import React, {useState} from "react";
+import HeaderDesktop from "@/core/application/components/header/HeaderDesktop";
+import HeaderMobile from "@/core/application/components/header/HeaderMobile";
+import useMediaQuery from "@/core/application/hooks/useMediaQuery";
+import {deviceSizes} from "@/themes/breakpoints";
 
 /**
  * @Project wambi-connect
  * @File Header.tsx
  * @Path core/application/components/header
  * @Author BRICE ZELE
- * @Date 06/08/2023
+ * @Date 16/08/2023
  */
-interface IHeader {
+interface IHeaderProps {
 
 }
 
-const Header: React.FC<IHeader> = ({}) => {
+const Header: React.FC<IHeaderProps> = ({}) => {
 
-    const {locale} = useIntl()
+
+    const isMobile = useMediaQuery(parseInt(deviceSizes.tablet))
+    const [isOpenMobileMenu, setIsOpenMobileMenu] = useState<boolean>(false)
     return (
-        <HeaderContainer>
-            <HeaderWrapper>
-                <HeaderContent>
-                    <HeaderLogoWrapper>
-                        <LinkWrapper href={Routes[locale as Locale].HOME()}>
-                            <Image width={175} height={124} src={Assets.images.logo} alt='Wambi logo'/>
-                        </LinkWrapper>
-                        <HeaderNav>
-                            <HeaderNavList>
-                                <HeaderNavItem>
-                                    <LinkWrapper href={'/'}>Features</LinkWrapper>
-                                </HeaderNavItem>
-                                <HeaderNavItem>
-                                    <LinkWrapper href={'/'}>Features</LinkWrapper>
-                                </HeaderNavItem>
-                                <HeaderNavItem>
-                                    <LinkWrapper href={'/'}>Features</LinkWrapper>
-                                </HeaderNavItem>
-                                <HeaderNavItem>
-                                    <LinkWrapper href={'/'}>Features</LinkWrapper>
-                                </HeaderNavItem>
-                            </HeaderNavList>
-                        </HeaderNav>
-                    </HeaderLogoWrapper>
-                </HeaderContent>
-            </HeaderWrapper>
-        </HeaderContainer>
+        <>
+            <HeaderDesktop onOpenMenu={() => {
+                setIsOpenMobileMenu((state) => !state)
+            }}/>
+            {isMobile && <HeaderMobile openMobileMenu={isOpenMobileMenu} onCloseMenu={() => {
+                setIsOpenMobileMenu((state) => !state)
+            }}/>}
+        </>
     )
 }
 
-const HeaderContainer = styled.header``
-const HeaderWrapper = styled.div`
-  max-width: 140rem;
-  margin: 0 auto;
-`
-const HeaderContent = styled.div`
-  float: left;
-  width: 100%;
-`
 
-const HeaderLogoWrapper = styled.div`
-  float: left;
-`
-
-const HeaderNav = styled.nav``
-
-const HeaderNavList = styled.ul``
-const HeaderNavItem = styled.li`
-  display: inline-block;
-
-  a {
-    display: inline-block;
-    font-size: ${({theme}) => theme.size.normal};
-    font-weight: ${({theme}) => theme.weight.normal};
-    text-transform: uppercase;
-    padding: 0 1.2rem;
-  }
-`
 export default Header

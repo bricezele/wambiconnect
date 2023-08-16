@@ -1,19 +1,25 @@
+/**
+ * @Project wambi-connect
+ * @File index.tsx
+ * @Path pages/contact
+ * @Author BRICE ZELE
+ * @Date 07/08/2023
+ */
 import React from 'react'
 import type {NextPage} from 'next'
 import styled from 'styled-components'
 import Header from "@/core/application/components/header/Header";
-import MainSection from "@/core/application/components/main-section/MainSection";
 
-const Home: NextPage = () => {
+const Contact: NextPage = () => {
+
     return (
         <Container>
             <Header/>
-            <MainSection/>
         </Container>
     )
 }
 
-export default Home
+export default Contact
 
 const Container = styled.div`
   width: 100%;

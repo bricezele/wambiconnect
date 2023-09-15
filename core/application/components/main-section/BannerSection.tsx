@@ -9,16 +9,30 @@ import {Assets} from "@/core/application/constants/assets";
 
 /**
  * @Project wambi-connect
- * @File MainSection.tsx
+ * @File BannerSection.tsx
  * @Path core/application/components/main-section
  * @Author BRICE ZELE
  * @Date 17/08/2023
  */
+interface ICTAProps {
+    link: string
+    image: string
+}
+
 interface IMainSectionProps {
+    title: string
+    subTitle: string
+    description: string
+    cta: ICTAProps[]
 
 }
 
-const MainSection: React.FC<IMainSectionProps> = ({}) => {
+const BannerSection: React.FC<IMainSectionProps> = ({
+                                                        title,
+                                                        subTitle,
+                                                        description,
+                                                        cta
+                                                    }) => {
 
     return (
         <MainSectionContainer className='main-section'>
@@ -28,12 +42,16 @@ const MainSection: React.FC<IMainSectionProps> = ({}) => {
                         <MainSectionColumn className='col-lg-5 col-md-12'>
                             <Fade left>
                                 <BannerText className='banner-text'>
-                                    <Title3>Introducing</Title3>
-                                    <Title2>Wambi</Title2>
-                                    <Paragraph>Ut non quam risus. Praesent venenatis ali-
-                                        quam rhoncus. Mauris sit amet rhoncus risus,
-                                        vel ullamcorper leo.</Paragraph>
-                                    <a href="#" title="">explore</a>
+                                    <Title3>{title}</Title3>
+                                    <Title2>{subTitle}</Title2>
+                                    <Paragraph>{description}</Paragraph>
+                                    <MainSectionCTAContainer>
+                                        {cta.map((element, index) => (
+                                            <a target='_blank' href={element.link} title={element.link} key={index}>
+                                                <img src={element.image}/>
+                                            </a>
+                                        ))}
+                                    </MainSectionCTAContainer>
                                 </BannerText>
                             </Fade>
                         </MainSectionColumn>
@@ -96,6 +114,17 @@ const MainSectionRow = styled(Row)`
   }
 `
 
+const MainSectionCTAContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 30px;
+
+  img {
+    width: 100%
+  }
+`
+
 const MainSectionColumn = styled(Column)`
   display: flex;
   align-items: center;
@@ -115,12 +144,11 @@ const BannerText = styled.div`
   h3 {
     font-size: 24px;
     font-weight: 700;
-    text-transform: uppercase;
     margin-bottom: 7px;
   }
 
   h2 {
-    font-size: 66px;
+    font-size: 50px;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 35px;
@@ -388,4 +416,4 @@ const Ring7 = styled.span`
   }
 
 `
-export default MainSection
+export default BannerSection

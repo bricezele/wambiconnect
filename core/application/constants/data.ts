@@ -1,4 +1,5 @@
 import {NavRoute} from "@/core/application/constants/routes";
+import {Assets} from "@/core/application/constants/assets";
 
 /**
  * @Project wambi-connect
@@ -14,5 +15,21 @@ export const Data = {
             label: 'Home.Title'
         }
     ],
-    home: {}
+    home: {
+        bannerSection: {
+            title: 'Home.BannerSection.Title',
+            subTitle: 'Home.BannerSection.SubTitle',
+            description: 'Home.BannerSection.Description',
+            ctaLabel: [
+                {
+                    link: 'https://play.google.com/store/apps/details?id=com.wambi',
+                    image: Assets.images.getItOnPlayStore
+                },
+                {
+                    link: 'https://play.google.com/store/apps/details?id=com.wambi',
+                    image: Assets.images.getItOnAppStore
+                },
+            ],
+        }
+    }
 }

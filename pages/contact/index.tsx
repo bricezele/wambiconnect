@@ -1,6 +1,6 @@
 /**
  * @Project wambi-connect
- * @File index.tsx
+ * @File index.ts
  * @Path pages/contact
  * @Author BRICE ZELE
  * @Date 07/08/2023
@@ -23,6 +23,4 @@ export default Contact
 
 const Container = styled.div`
   width: 100%;
-  position: relative;
-  float: left;
 `

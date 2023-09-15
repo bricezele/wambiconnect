@@ -13,3 +13,13 @@ export const Routes: Record<Locale, Record<NavRoute, (...args: string[]) => stri
         HOME: () => '/'
     }
 }
+
+export interface IRouteConfig {
+}
+
+const defaultConfig: IRouteConfig = {}
+
+export const RoutesConfig: Record<NavRoute, IRouteConfig> = {
+    HOME: {...defaultConfig},
+}
+

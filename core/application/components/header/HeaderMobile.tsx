@@ -8,6 +8,7 @@
 import React, {useRef} from "react";
 import styled from "styled-components";
 import LinkWrapper from "@/core/application/components/common/LinkWrapper";
+import HeaderLocaleSelect from "@/core/application/components/header/HeaderLocaleSelect";
 
 interface IHeaderMobileProps {
     openMobileMenu?: boolean
@@ -38,6 +39,12 @@ const HeaderMobile: React.FC<IHeaderMobileProps> = ({openMobileMenu = false, onC
                     </MenuItem>
                 </MenuList>
             </MobileMenu>
+            <SocialLinksContainer>
+                <li><a href="#" title=""><i className="mdi mdi-facebook"></i></a></li>
+                <li><a href="#" title=""><i className="mdi mdi-twitter"></i></a></li>
+                <li><a href="#" title=""><i className="mdi mdi-instagram"></i></a></li>
+                <li><HeaderLocaleSelect isHeaderContentWhite={false}/></li>
+            </SocialLinksContainer>
         </HeaderContainer>
     )
 }
@@ -94,6 +101,22 @@ const Link = styled(LinkWrapper)`
   font-weight: 600;
   text-transform: capitalize;
   font-size: 24px;
+`
+
+const SocialLinksContainer = styled.ul`
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+
+  li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  a {
+    color: #333;
+    font-size: 20px;
+  }
 `
 
 export default HeaderMobile

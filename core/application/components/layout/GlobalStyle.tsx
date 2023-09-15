@@ -104,9 +104,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   section {
-    float: left;
     width: 100%;
-    position: relative;
   }
 
   img {

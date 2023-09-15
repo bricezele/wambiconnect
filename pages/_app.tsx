@@ -1,28 +1,30 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import {IntlProvider} from 'react-intl'
 import type {AppProps} from 'next/app'
-import Link from 'next/link'
+import dynamic from "next/dynamic"
 import localesFr from '../locales/fr.json'
 import localesEn from '../locales/en.json'
-import {ThemeProvider} from 'styled-components'
-import styled, {createGlobalStyle} from 'styled-components'
+import styled, {ThemeProvider} from 'styled-components'
+import {withTranslateRoutes} from 'next-translate-routes'
 import '../public/css/animate.css'
 import '../public/css/bootstrap.min.css'
 import '../public/css/font-awesome.min.css'
 import '../public/css/materialdesignicons.min.css'
-import '../public/css/dark-color.css'
 import '../public/css/responsive.css'
-import {DEFAULT_LOCALE} from '../core/constants'
+import '../public/css/dark-color.css'
+import {DEFAULT_LOCALE} from '@/core/constants'
 import Theme from '../themes/Theme'
-import {createDependencies} from '../core/application/dependencies'
-import {DependenciesContainerContext} from '../core/application/contexts/DependenciesContainerContext'
+import {createDependencies} from '@/core/application/dependencies'
+import {DependenciesContainerContext} from '@/core/application/contexts/DependenciesContainerContext'
 import GlobalStyle from "@/core/application/components/layout/GlobalStyle";
+import Head from "next/head";
 
 const messages: Record<string, any> = {
     fr: localesFr,
     en: localesEn
 }
+
 
 const App = ({Component, pageProps}: AppProps) => {
     const router = useRouter()
@@ -35,17 +37,22 @@ const App = ({Component, pageProps}: AppProps) => {
     }, [router.locale])
 
     return (
-        <ThemeProvider theme={Theme}>
-            <DependenciesContainerContext.Provider value={createDependencies()}>
-                <IntlProvider messages={messages[locale]} locale={locale} defaultLocale={DEFAULT_LOCALE}>
-                    <GlobalStyle/>
-                    <Component {...pageProps} />
-                </IntlProvider>
-            </DependenciesContainerContext.Provider>
-        </ThemeProvider>
+        <>
+            <Head>
+                <title>Wambi</title>
+            </Head>
+            <ThemeProvider theme={Theme}>
+                <DependenciesContainerContext.Provider value={createDependencies()}>
+                    <IntlProvider messages={messages[locale]} locale={locale} defaultLocale={DEFAULT_LOCALE}>
+                        <GlobalStyle/>
+                        <Component {...pageProps} />
+                    </IntlProvider>
+                </DependenciesContainerContext.Provider>
+            </ThemeProvider>
+        </>
     )
 }
-export default App
+export default withTranslateRoutes(App)
 
 interface LocaleProps {
     selected: boolean

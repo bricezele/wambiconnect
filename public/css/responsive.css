@@ -96,10 +96,9 @@
         padding: 50px 0;
     }
 
-    .up-social-links {
-        padding-right: 50px;
-    }
-
+    /*    .up-social-links {
+            padding-right: 50px;
+        }*/
     .mobile-menu-btn {
         display: block;
     }
@@ -363,10 +362,6 @@
 
     .ld-pages li h3 {
         font-size: 18px;
-    }
-
-    .banner-text {
-        padding-top: 0;
     }
 
     .banner-text > a {

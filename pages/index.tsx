@@ -1,22 +1,17 @@
 import React from 'react'
 import type {NextPage} from 'next'
 import styled from 'styled-components'
-import Header from "@/core/application/components/header/Header";
 import MainSection from "@/core/application/components/main-section/MainSection";
+import PageLayout from "@/core/application/components/layout/PageLayout";
+import {NavRoute} from "@/core/application/constants/routes";
 
 const Home: NextPage = () => {
     return (
-        <Container>
-            <Header/>
+        <PageLayout currentRoute={NavRoute.HOME}>
             <MainSection/>
-        </Container>
+        </PageLayout>
     )
 }
 
 export default Home
 
-const Container = styled.div`
-  width: 100%;
-  position: relative;
-  float: left;
-`

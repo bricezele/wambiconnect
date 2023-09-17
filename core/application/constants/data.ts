@@ -30,6 +30,42 @@ export const Data = {
                     image: Assets.images.getItOnAppStore
                 },
             ],
-        }
+        },
+        featuresSection: [
+            {
+                icon: 'mdi mdi-account-convert',
+                title: 'Home.Features.MarketPlace',
+                description: 'Home.Features.MarketPlace.Description',
+            },
+            {
+                icon: 'mdi mdi-alarm-check',
+                title: 'Home.Features.MarketPlace',
+                description: 'Home.Features.MarketPlace.Description',
+            },
+            {
+                icon: 'mdi mdi-android',
+                title: 'Home.Features.MarketPlace',
+                description: 'Home.Features.MarketPlace.Description',
+            },
+            {
+                icon: 'mdi mdi-apple',
+                title: 'Home.Features.MarketPlace',
+                description: 'Home.Features.MarketPlace.Description',
+            },
+        ],
+        aboutSection: [
+            {
+                title: 'Home.About.Simple.And.Easy',
+                description: 'Home.About.Simple.And.Easy.Description',
+            },
+            {
+                title: 'Home.About.Simple.And.Easy',
+                description: 'Home.About.Simple.And.Easy.Description',
+            },
+            {
+                title: 'Home.About.Simple.And.Easy',
+                description: 'Home.About.Simple.And.Easy.Description',
+            },
+        ]
     }
 }

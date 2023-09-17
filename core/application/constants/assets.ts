@@ -3,7 +3,8 @@ export const Assets = {
         logo: '/images/logo.png',
         getItOnPlayStore: '/images/get_it_on_play_store.png',
         getItOnAppStore: '/images/get_it_on_app_store.png',
-        mainSectionBanner: '/images/main-section-banner.png'
+        mainSectionBanner: '/images/main-section-banner.png',
+        mainMobile1: '/images/main_mobile_section_1.png'
     },
     svgs: {
         icons: {

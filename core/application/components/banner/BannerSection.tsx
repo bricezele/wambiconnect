@@ -10,7 +10,7 @@ import {Assets} from "@/core/application/constants/assets";
 /**
  * @Project wambi-connect
  * @File BannerSection.tsx
- * @Path core/application/components/main-section
+ * @Path core/application/components/banner
  * @Author BRICE ZELE
  * @Date 17/08/2023
  */
@@ -55,7 +55,7 @@ const BannerSection: React.FC<IMainSectionProps> = ({
                                 </BannerText>
                             </Fade>
                         </MainSectionColumn>
-                        <Column className='col-lg-7 col-md-12'>
+                        <Column className='col-lg-7 col-md-12 img-banner'>
                             <Fade bottom>
                                 <BannerContainer>
                                     <BannerImgContainer>
@@ -90,14 +90,19 @@ const MainSectionContainer = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(/images/main-sec-bg2.png);
-  padding: 250px 0 0 0;
+  padding: 150px 0 0 0;
 
   @media ${breakpoints.tabletL} {
-    padding: 300px 0 0 0;
+    padding: 200px 0 0 0;
+    background-size: cover;
   }
 
   @media ${breakpoints.tablet} {
-    padding: 300px 0 0 0;
+    padding: 200px 0 50px 0;
+  }
+
+  .img-banner {
+    padding-top: 100px;
   }
 `
 
@@ -120,8 +125,24 @@ const MainSectionCTAContainer = styled.div`
   justify-content: space-between;
   column-gap: 30px;
 
+  a:last-child img {
+    float: right;
+  }
+
   img {
-    width: 100%
+    width: 80%;
+
+    @media ${breakpoints.tablet} {
+      width: 80%;
+    }
+
+    @media ${breakpoints.tabletL} {
+      width: 80%;
+    }
+
+    @media ${breakpoints.laptop} {
+      width: 100%;
+    }
   }
 `
 
@@ -140,6 +161,15 @@ const BannerContainer = styled.div`
 
 const BannerText = styled.div`
   width: 100%;
+  padding-top: 85px;
+
+  @media ${breakpoints.laptop} {
+    padding-top: 0;
+  }
+
+  @media ${breakpoints.laptopM} {
+    padding-bottom: 85px;
+  }
 
   h3 {
     font-size: 24px;

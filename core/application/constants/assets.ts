@@ -4,7 +4,11 @@ export const Assets = {
         getItOnPlayStore: '/images/get_it_on_play_store.png',
         getItOnAppStore: '/images/get_it_on_app_store.png',
         mainSectionBanner: '/images/main-section-banner.png',
-        mainMobile1: '/images/main_mobile_section_1.png'
+        mainMobile1: '/images/main_mobile_section_1.png',
+        user1: '/images/user-placeholder/user1.png',
+        user2: '/images/user-placeholder/user2.png',
+        user3: '/images/user-placeholder/user3.png',
+        user4: '/images/user-placeholder/user4.png',
     },
     svgs: {
         icons: {

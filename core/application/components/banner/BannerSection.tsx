@@ -19,11 +19,18 @@ interface ICTAProps {
     image: string
 }
 
+interface IUser {
+    title: string
+    description: string
+    users: string[]
+}
+
 interface IMainSectionProps {
     title: string
     subTitle: string
     description: string
     cta: ICTAProps[]
+    userInfos: IUser
 
 }
 
@@ -31,11 +38,16 @@ const BannerSection: React.FC<IMainSectionProps> = ({
                                                         title,
                                                         subTitle,
                                                         description,
-                                                        cta
+                                                        cta,
+                                                        userInfos
                                                     }) => {
 
     return (
         <MainSectionContainer className='main-section'>
+            <div className="star-bg">
+                <div id="stars"></div>
+                <div id="stars3"></div>
+            </div>
             <MainSectionWrapper className='custom-container'>
                 <MainSectionData className='main-section-data col-12'>
                     <MainSectionRow className='row'>
@@ -45,6 +57,18 @@ const BannerSection: React.FC<IMainSectionProps> = ({
                                     <Title3>{title}</Title3>
                                     <Title2>{subTitle}</Title2>
                                     <Paragraph>{description}</Paragraph>
+                                    <UsersAppContainer>
+                                        <ul>
+                                            {
+                                                userInfos.users.map((user, index) => (
+                                                    <li key={index}>
+                                                        <img src={user}/>
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
+                                        <Title3>10k+ active users</Title3>
+                                    </UsersAppContainer>
                                     <MainSectionCTAContainer>
                                         {cta.map((element, index) => (
                                             <a target='_blank' href={element.link} title={element.link} key={index}>
@@ -56,11 +80,13 @@ const BannerSection: React.FC<IMainSectionProps> = ({
                             </Fade>
                         </MainSectionColumn>
                         <Column className='col-lg-7 col-md-12 img-banner'>
-                            <Fade bottom>
-                                <BannerContainer>
+                            <BannerContainer>
+                                <Fade>
                                     <BannerImgContainer>
                                         <BannerImg src={Assets.images.mainSectionBanner}/>
                                     </BannerImgContainer>
+                                </Fade>
+                                <RingContainer>
                                     <Ring1>
                                         <img src='https://miro.medium.com/v2/resize:fit:4800/0*KIKnUvzdIkp5zcDJ'/>
                                     </Ring1>
@@ -76,8 +102,8 @@ const BannerSection: React.FC<IMainSectionProps> = ({
                                     <Ring5/>
                                     <Ring6/>
                                     <Ring7/>
-                                </BannerContainer>
-                            </Fade>
+                                </RingContainer>
+                            </BannerContainer>
                         </Column>
                     </MainSectionRow>
                 </MainSectionData>
@@ -91,6 +117,7 @@ const MainSectionContainer = styled.section`
   background-size: cover;
   background-image: url(/images/main-sec-bg2.png);
   padding: 150px 0 0 0;
+  position: relative;
 
   @media ${breakpoints.tabletL} {
     padding: 200px 0 0 0;
@@ -102,7 +129,13 @@ const MainSectionContainer = styled.section`
   }
 
   .img-banner {
-    padding-top: 100px;
+    padding-top: 150px;
+    padding-bottom: 100px;
+
+    @media ${breakpoints.tablet} {
+      padding-top: 200px;
+      padding-bottom: 100px;
+    }
   }
 `
 
@@ -113,27 +146,43 @@ const MainSectionWrapper = styled.div`
 
 const MainSectionRow = styled(Row)`
   justify-content: space-between;
-
-  @media (max-width: 992px) {
-    flex-direction: column-reverse;
-  }
 `
 
 const MainSectionCTAContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   column-gap: 30px;
+  justify-content: center;
 
-  a:last-child img {
-    float: right;
+  @media ${breakpoints.tabletL} {
+    justify-content: flex-start;
+  }
+
+  a {
+    display: block;
+    padding: 15px 35px;
+    background-color: #fff;
+    border: none;
+    position: relative;
+    border-radius: 12px;
+    transition: .4s all;
+
+    &:hover {
+      background-color: #007afd;
+
+      img {
+        filter: invert(1);
+      }
+    }
   }
 
   img {
     width: 80%;
+    transition: .4s all;
 
     @media ${breakpoints.tablet} {
       width: 80%;
+      justify-content: space-between;
     }
 
     @media ${breakpoints.tabletL} {
@@ -221,6 +270,10 @@ const BannerImgContainer = styled.div`
     height: 80%;
     left: 11%;
     top: -9%;
+    opacity: 0;
+    animation: fadeIn 1s ease-in alternate;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
 
   &:after {
@@ -232,6 +285,10 @@ const BannerImgContainer = styled.div`
     height: 102%;
     left: 1%;
     top: -20%;
+    opacity: 0;
+    animation: fadeIn 1s ease-in alternate;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
 
   @media ${breakpoints.tablet} {
@@ -266,8 +323,55 @@ const BannerImgContainer = styled.div`
 
 `
 
+const UsersAppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 35px 0;
+  justify-content: center;
+
+  @media ${breakpoints.tabletL} {
+    justify-content: inherit;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    margin: 0 10px 20px 0;
+    justify-content: center;
+
+    @media ${breakpoints.tabletL} {
+      justify-content: inherit;
+    }
+
+    li {
+      border-radius: 50%;
+      border: 4px solid #fff;
+      padding: 0;
+      width: 60px;
+      height: 60px;
+
+      img {
+        vertical-align: middle;
+        border-style: none;
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    li:not(:first-child) {
+      margin-left: -20px;
+    }
+  }
+`
+
 const BannerImg = styled.img`
   width: 110%;
+`
+const RingContainer = styled.div`
+  opacity: 0;
+  animation: fadeIn 1s ease-in alternate;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 `
 
 const Ring = css`

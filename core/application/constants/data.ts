@@ -30,6 +30,16 @@ export const Data = {
                     image: Assets.images.getItOnAppStore
                 },
             ],
+            userInfos: {
+                title: '',
+                description: '',
+                users: [
+                    Assets.images.user1,
+                    Assets.images.user2,
+                    Assets.images.user3,
+                    Assets.images.user4,
+                ]
+            }
         },
         featuresSection: [
             {

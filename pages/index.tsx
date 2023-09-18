@@ -17,6 +17,7 @@ const Home: NextPage = () => {
                            subTitle={intl.formatMessage({id: Data.home.bannerSection.subTitle})}
                            description={intl.formatMessage({id: Data.home.bannerSection.description})}
                            cta={Data.home.bannerSection.ctaLabel}
+                           userInfos={Data.home.bannerSection.userInfos}
             />
             {Data.home.featuresSection && <FeatureSection features={Data.home.featuresSection}/>}
             {Data.home.aboutSection && <AboutSection items={Data.home.aboutSection}/>}

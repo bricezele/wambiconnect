@@ -44,15 +44,17 @@ const AboutSection: React.FC<IAboutSectionProps> = ({items}) => {
                             <AboutList>
                                 {
                                     items?.map((item, index) => (
-                                        <AboutInfo>
-                                            <AboutNumber className={`st${index + 1}`}>
-                                                <AboutNumberTitle>{`0${index + 1}.`}</AboutNumberTitle>
-                                            </AboutNumber>
-                                            <AboutInfoContainer>
-                                                <AboutTitle3>{intl.formatMessage({id: item.title})}</AboutTitle3>
-                                                <AboutDescription>{intl.formatMessage({id: item.description})}</AboutDescription>
-                                            </AboutInfoContainer>
-                                        </AboutInfo>
+                                        <Fade bottom duration={700} delay={index * 100}>
+                                            <AboutInfo>
+                                                <AboutNumber className={`st${index + 1}`}>
+                                                    <AboutNumberTitle>{`0${index + 1}.`}</AboutNumberTitle>
+                                                </AboutNumber>
+                                                <AboutInfoContainer>
+                                                    <AboutTitle3>{intl.formatMessage({id: item.title})}</AboutTitle3>
+                                                    <AboutDescription>{intl.formatMessage({id: item.description})}</AboutDescription>
+                                                </AboutInfoContainer>
+                                            </AboutInfo>
+                                        </Fade>
                                     ))
                                 }
                             </AboutList>
@@ -67,7 +69,7 @@ const AboutSection: React.FC<IAboutSectionProps> = ({items}) => {
 
 const AboutContainer = styled.section`
   position: relative;
-  
+
   @media ${breakpoints.tabletL} {
     padding: 270px 0 460px 0;
   }

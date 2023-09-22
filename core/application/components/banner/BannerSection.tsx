@@ -6,6 +6,7 @@ import {Paragraph, Title2, Title3} from "@/core/application/components/common/Ti
 // @ts-ignore
 import Fade from 'react-reveal/Fade';
 import {Assets} from "@/core/application/constants/assets";
+import {useIntl} from "react-intl";
 
 /**
  * @Project wambi-connect
@@ -21,7 +22,6 @@ interface ICTAProps {
 
 interface IUser {
     title: string
-    description: string
     users: string[]
 }
 
@@ -41,6 +41,7 @@ const BannerSection: React.FC<IMainSectionProps> = ({
                                                         cta,
                                                         userInfos
                                                     }) => {
+    const intl = useIntl()
 
     return (
         <MainSectionContainer className='main-section'>
@@ -54,9 +55,9 @@ const BannerSection: React.FC<IMainSectionProps> = ({
                         <MainSectionColumn className='col-lg-5 col-md-12'>
                             <Fade left>
                                 <BannerText className='banner-text'>
-                                    <Title3>{title}</Title3>
-                                    <Title2>{subTitle}</Title2>
-                                    <Paragraph>{description}</Paragraph>
+                                    <Title3>{intl.formatMessage({id: title})}</Title3>
+                                    <Title2>{intl.formatMessage({id: subTitle})}</Title2>
+                                    <Paragraph>{intl.formatMessage({id: description})}</Paragraph>
                                     <UsersAppContainer>
                                         <ul>
                                             {
@@ -67,7 +68,7 @@ const BannerSection: React.FC<IMainSectionProps> = ({
                                                 ))
                                             }
                                         </ul>
-                                        <Title3>10k+ active users</Title3>
+                                        <Title3>{intl.formatMessage({id: userInfos.title})}</Title3>
                                     </UsersAppContainer>
                                     <MainSectionCTAContainer>
                                         {cta.map((element, index) => (
@@ -88,16 +89,16 @@ const BannerSection: React.FC<IMainSectionProps> = ({
                                 </Fade>
                                 <RingContainer>
                                     <Ring1>
-                                        <img src='https://miro.medium.com/v2/resize:fit:4800/0*KIKnUvzdIkp5zcDJ'/>
+                                        <img src={Assets.images.datingApp}/>
                                     </Ring1>
                                     <Ring2>
-                                        <img src='https://miro.medium.com/v2/resize:fit:4800/0*KIKnUvzdIkp5zcDJ'/>
+                                        <img src={Assets.images.socialNetwork}/>
                                     </Ring2>
                                     <Ring3>
-                                        <img src='https://miro.medium.com/v2/resize:fit:4800/0*KIKnUvzdIkp5zcDJ'/>
+                                        <img src={Assets.images.ecommerce}/>
                                     </Ring3>
                                     <Ring4>
-                                        <img src='https://miro.medium.com/v2/resize:fit:4800/0*KIKnUvzdIkp5zcDJ'/>
+                                        <img src={Assets.images.socialMedia}/>
                                     </Ring4>
                                     <Ring5/>
                                     <Ring6/>

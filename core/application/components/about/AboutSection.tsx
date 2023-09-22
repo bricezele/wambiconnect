@@ -7,6 +7,11 @@
  */
 import React from "react";
 import styled from "styled-components";
+import dynamic from "next/dynamic";
+
+const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
+    ssr: false,
+});
 import {useIntl} from "react-intl";
 import {Row} from "@/core/application/components/common";
 import {Assets} from "@/core/application/constants/assets";
@@ -30,7 +35,7 @@ const AboutSection: React.FC<IAboutSectionProps> = ({items}) => {
     return (
         <AboutContainer className='about' id='about'>
             <AboutBackground/>
-            <AboutWrapper>
+            <AboutWrapper className='custom-container'>
                 <AboutSubContainer>
                     <Row className='row'>
                         <AboutItemContainer className='col-lg-4'>
@@ -41,15 +46,27 @@ const AboutSection: React.FC<IAboutSectionProps> = ({items}) => {
                             </AboutMainMobile>
                         </AboutItemContainer>
                         <AboutItemContainer className='col-lg-8'>
-                            <AboutList>
+                            <AboutList className='about-list'>
                                 {
                                     items?.map((item, index) => (
                                         <Fade bottom duration={700} delay={index * 100}>
-                                            <AboutInfo>
+                                            <AboutInfo className='about-info'>
                                                 <AboutNumber className={`st${index + 1}`}>
-                                                    <AboutNumberTitle>{`0${index + 1}.`}</AboutNumberTitle>
+                                                    <AboutNumberTitle>
+                                                        <AnimatedNumbers
+                                                            animateToNumber={index * 10}
+                                                            locale="fr-FR"
+                                                            configs={[
+                                                                {mass: 1, tension: 220, friction: 100},
+                                                                {mass: 1, tension: 180, friction: 130},
+                                                                {mass: 1, tension: 280, friction: 90},
+                                                                {mass: 1, tension: 180, friction: 135},
+                                                                {mass: 1, tension: 260, friction: 100},
+                                                                {mass: 1, tension: 210, friction: 180},
+                                                            ]}/>
+                                                    </AboutNumberTitle>
                                                 </AboutNumber>
-                                                <AboutInfoContainer>
+                                                <AboutInfoContainer className='abt-info'>
                                                     <AboutTitle3>{intl.formatMessage({id: item.title})}</AboutTitle3>
                                                     <AboutDescription>{intl.formatMessage({id: item.description})}</AboutDescription>
                                                 </AboutInfoContainer>
@@ -71,7 +88,7 @@ const AboutContainer = styled.section`
   position: relative;
 
   @media ${breakpoints.tabletL} {
-    padding: 270px 0 460px 0;
+    padding: 270px 0 150px 0;
   }
 `
 
@@ -110,7 +127,11 @@ const AboutInfo = styled.div`
   width: 100%;
   margin-bottom: 60px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @media ${breakpoints.tablet} {
+    flex-direction: row;
+  }
 
   .st2:before {
     left: -45px;
@@ -127,7 +148,7 @@ const AboutInfo = styled.div`
 `
 
 const AboutInfoContainer = styled.div`
-  width: 80%;
+  width: 100%;
   position: relative;
   z-index: 99;
 `
@@ -151,8 +172,8 @@ const AboutNumber = styled.div`
 `
 
 const AboutTitle3 = styled(Title3)`
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 50px;
+  font-weight: 900;
   margin-bottom: 15px;
   color: #fff;
 `
@@ -163,15 +184,19 @@ const AboutDescription = styled.p`
 `
 
 const AboutNumberTitle = styled.span`
-  font-size: 60px;
+  font-size: 55px;
   font-weight: 900;
   color: #fff;
 `
 
 const AboutList = styled.div`
   width: 100%;
-  padding-left: 70px;
+  padding-left: 20px;
   padding-top: 90px;
+
+  @media ${breakpoints.tablet} {
+    padding-left: 70px;
+  }
 `
 
 export default AboutSection

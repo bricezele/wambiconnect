@@ -15,7 +15,7 @@ import Fade from "react-reveal/Fade";
 import {useIntl} from "react-intl";
 
 interface IFeatureItemProps {
-    icon: string
+    image: string
     title: string
     description: string
 }
@@ -39,9 +39,9 @@ const FeatureSection: React.FC<IFeatureProps> = ({
                                 <FeatureItem className='col-lg-3 col-md-4 col-sm-6 col-12' key={index}>
                                     <Fade bottom duration={700} delay={index * 100}>
                                         <FeatureItemIcon>
-                                            <FeatureItemIconContainer>
-                                                <i className={feature.icon}></i>
-                                            </FeatureItemIconContainer>
+                                            <FeatureItemIconContainer style={{
+                                                backgroundImage: `url(${feature.image})`
+                                            }}/>
                                         </FeatureItemIcon>
                                         <FeatureItemInfo>
                                             <FeatureItemTitle3>{intl.formatMessage({id: feature.title})}</FeatureItemTitle3>
@@ -71,7 +71,7 @@ const FeatureSectionContainer = styled.section`
     &:before {
       content: '';
       position: absolute;
-      bottom: -35px;
+      bottom: 45px;
       left: 0;
       width: 50%;
       height: 310px;
@@ -120,22 +120,15 @@ const FeatureItemIcon = styled.div`
   margin-bottom: 25px;
 `
 
-const FeatureItemIconContainer = styled.span`
-  width: 90px;
-  height: 90px;
-  border-radius: 100px;
-  text-align: center;
-  display: inline-block;
-  line-height: 90px;
+const FeatureItemIconContainer = styled.div`
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   box-shadow: -5px 7px 11px rgba(0, 0, 0, 0.35);
   transition: all 300ms linear;
-  background-color: #007afd;
-
-  i {
-    font-size: 60px;
-    font-weight: 700;
-    color: #fff;
-  }
+  border-radius: 10px;
 `
 
 const FeatureItemInfo = styled.div`

@@ -31,8 +31,7 @@ export const Data = {
                 },
             ],
             userInfos: {
-                title: '',
-                description: '',
+                title: 'Home.BannerSection.NumberOfUsers',
                 users: [
                     Assets.images.user1,
                     Assets.images.user2,
@@ -43,22 +42,22 @@ export const Data = {
         },
         featuresSection: [
             {
-                icon: 'mdi mdi-account-convert',
+                image: Assets.images.socialFeature,
+                title: 'Home.Features.Social',
+                description: 'Home.Features.Social.Description',
+            },
+            {
+                image: Assets.images.datingFeature,
+                title: 'Home.Features.Dating',
+                description: 'Home.Features.Dating.Description',
+            },
+            {
+                image: Assets.images.marketPlaceFeature,
                 title: 'Home.Features.MarketPlace',
                 description: 'Home.Features.MarketPlace.Description',
             },
             {
-                icon: 'mdi mdi-alarm-check',
-                title: 'Home.Features.MarketPlace',
-                description: 'Home.Features.MarketPlace.Description',
-            },
-            {
-                icon: 'mdi mdi-android',
-                title: 'Home.Features.MarketPlace',
-                description: 'Home.Features.MarketPlace.Description',
-            },
-            {
-                icon: 'mdi mdi-apple',
+                image: Assets.images.socialFeature,
                 title: 'Home.Features.MarketPlace',
                 description: 'Home.Features.MarketPlace.Description',
             },

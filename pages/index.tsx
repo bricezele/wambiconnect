@@ -8,19 +8,21 @@ import {useIntl} from "react-intl";
 import {Data} from "@/core/application/constants/data";
 import FeatureSection from "@/core/application/components/feature/FeatureSection";
 import AboutSection from "@/core/application/components/about/AboutSection";
+import ServiceSection from "@/core/application/components/services/ServiceSection";
 
 const Home: NextPage = () => {
     const intl = useIntl()
     return (
         <PageLayout currentRoute={NavRoute.HOME}>
-            <BannerSection title={intl.formatMessage({id: Data.home.bannerSection.title})}
-                           subTitle={intl.formatMessage({id: Data.home.bannerSection.subTitle})}
-                           description={intl.formatMessage({id: Data.home.bannerSection.description})}
+            <BannerSection title={Data.home.bannerSection.title}
+                           subTitle={Data.home.bannerSection.subTitle}
+                           description={Data.home.bannerSection.description}
                            cta={Data.home.bannerSection.ctaLabel}
                            userInfos={Data.home.bannerSection.userInfos}
             />
             {Data.home.featuresSection && <FeatureSection features={Data.home.featuresSection}/>}
             {Data.home.aboutSection && <AboutSection items={Data.home.aboutSection}/>}
+            <ServiceSection/>
         </PageLayout>
     )
 }

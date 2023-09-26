@@ -9,6 +9,7 @@ import {Data} from "@/core/application/constants/data";
 import FeatureSection from "@/core/application/components/feature/FeatureSection";
 import AboutSection from "@/core/application/components/about/AboutSection";
 import ServiceSection from "@/core/application/components/services/ServiceSection";
+import TestimonialsSection from "@/core/application/components/testimonial/TestimonialsSection";
 
 const Home: NextPage = () => {
     const intl = useIntl()
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
             {Data.home.featuresSection && <FeatureSection features={Data.home.featuresSection}/>}
             {Data.home.aboutSection && <AboutSection items={Data.home.aboutSection}/>}
             <ServiceSection/>
+            <TestimonialsSection/>
         </PageLayout>
     )
 }

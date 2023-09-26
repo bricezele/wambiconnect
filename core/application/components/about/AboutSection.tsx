@@ -88,7 +88,7 @@ const AboutContainer = styled.section`
   position: relative;
 
   @media ${breakpoints.tabletL} {
-    padding: 270px 0 150px 0;
+    padding: 270px 0 460px 0;
   }
 `
 

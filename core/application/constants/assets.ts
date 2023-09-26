@@ -16,6 +16,8 @@ export const Assets = {
         socialFeature: '/images/feature/social.jpg',
         datingFeature: '/images/feature/dating.jpg',
         marketPlaceFeature: '/images/feature/marketplace.jpg',
+        shape2: '/images/shape2.png',
+        play: '/images/play.png',
     },
     svgs: {
         icons: {
@@ -24,3 +26,4 @@ export const Assets = {
         }
     }
 }
+

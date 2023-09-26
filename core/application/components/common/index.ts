@@ -7,5 +7,11 @@ import styled from "styled-components";
  * @Author BRICE ZELE
  * @Date 30/08/2023
  */
-export const Row = styled.div``
-export const Column = styled.div``
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+`

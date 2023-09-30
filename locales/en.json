@@ -1,6 +1,10 @@
 {
+  "About.Title": "About",
   "Common.Loading": "Loading",
-  "HomePage.Greetings": "Hello {name}",
-  "HomePage.Title": "Welcome on your Next App",
-  "HomePage.User": "User: {username}"
+  "Contact.Title": "Contact",
+  "Dating.Title": "Dating",
+  "Home.Title": "Home",
+  "Features.Title": "Functionnalities",
+  "MarketPlace.Title": "Market Place",
+  "Social.Title": "Social"
 }

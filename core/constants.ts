@@ -1,3 +1,5 @@
-const DEFAULT_LOCALE = 'fr'
+import {Locale} from "@/core/domain/enums/Locale";
 
-export { DEFAULT_LOCALE }
+const DEFAULT_LOCALE = 'en'
+
+export {DEFAULT_LOCALE}

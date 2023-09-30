@@ -1,53 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import type { NextPage } from 'next'
+import React from 'react'
+import type {NextPage} from 'next'
 import styled from 'styled-components'
-import { useIntl } from 'react-intl'
-import HelloWorld from '../core/application/components/home/HelloWorld'
-import { HomeViewModel, HomeViewModelState } from '../core/application/viewModels/home/HomeViewModel'
-import { useDependencies } from '../core/application/contexts/DependenciesContainerContext'
+import BannerSection from "@/core/application/components/banner/BannerSection";
+import PageLayout from "@/core/application/components/layout/PageLayout";
+import {NavRoute} from "@/core/application/constants/routes";
+import {useIntl} from "react-intl";
+import {Data} from "@/core/application/constants/data";
+import FeatureSection from "@/core/application/components/feature/FeatureSection";
+import AboutSection from "@/core/application/components/about/AboutSection";
+import ServiceSection from "@/core/application/components/services/ServiceSection";
+import TestimonialsSection from "@/core/application/components/testimonial/TestimonialsSection";
 
 const Home: NextPage = () => {
-  const intl = useIntl()
-
-  const { userProvider } = useDependencies()
-  const [homeState, setHomeState] = useState<HomeViewModelState>(HomeViewModel.defaultState)
-  const [homeVM] = useState(new HomeViewModel(userProvider, setHomeState))
-
-  useEffect(() => {
-    homeVM.getUser('TheoZanchiAppstud')
-  }, [])
-
-  const { user, isLoading, error } = homeState
-
-  return (
-    <Container>
-      <Main>
-        <HelloWorld name="AppStud" />
-        <h1>{intl.formatMessage({ id: 'HomePage.Title' })}</h1>
-        {isLoading && <p>{intl.formatMessage({ id: 'Common.Loading' })}</p>}
-        {!isLoading && !!user && <p>{intl.formatMessage({ id: 'HomePage.User' }, { username: user.name })}</p>}
-        {!isLoading && !!error && <p>{error.name}</p>}
-      </Main>
-    </Container>
-  )
+    const intl = useIntl()
+    return (
+        <PageLayout currentRoute={NavRoute.HOME}>
+            <BannerSection title={Data.home.bannerSection.title}
+                           subTitle={Data.home.bannerSection.subTitle}
+                           description={Data.home.bannerSection.description}
+                           cta={Data.home.bannerSection.ctaLabel}
+                           userInfos={Data.home.bannerSection.userInfos}
+            />
+            {Data.home.featuresSection && <FeatureSection features={Data.home.featuresSection}/>}
+            {Data.home.aboutSection && <AboutSection items={Data.home.aboutSection}/>}
+            <ServiceSection/>
+            <TestimonialsSection/>
+        </PageLayout>
+    )
 }
 
 export default Home
 
-const Container = styled.div`
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`
-const Main = styled.main`
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`

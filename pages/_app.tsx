@@ -1,97 +1,66 @@
-import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
-import { IntlProvider } from 'react-intl'
-import type { AppProps } from 'next/app'
-import Link from 'next/link'
+import React, {useEffect, useState} from 'react'
+import {useRouter} from 'next/router'
+import {IntlProvider} from 'react-intl'
+import type {AppProps} from 'next/app'
+import dynamic from "next/dynamic"
 import localesFr from '../locales/fr.json'
 import localesEn from '../locales/en.json'
-import { ThemeProvider } from 'styled-components'
-import styled, { createGlobalStyle } from 'styled-components'
-import '../public/css/minireset.css'
-import { DEFAULT_LOCALE } from '../core/constants'
+import styled, {ThemeProvider} from 'styled-components'
+import {withTranslateRoutes} from 'next-translate-routes'
+import '../public/css/animate.css'
+import '../public/css/bootstrap.min.css'
+import '../public/css/font-awesome.min.css'
+import '../public/css/materialdesignicons.min.css'
+import '../public/css/responsive.css'
+import '../public/css/dark-color.css'
+import '../public/css/star-background.css'
+import '../public/css/style.css'
+import {DEFAULT_LOCALE} from '@/core/constants'
 import Theme from '../themes/Theme'
-import { createDependencies } from '../core/application/dependencies'
-import { DependenciesContainerContext } from '../core/application/contexts/DependenciesContainerContext'
+import {createDependencies} from '@/core/application/dependencies'
+import {DependenciesContainerContext} from '@/core/application/contexts/DependenciesContainerContext'
+import GlobalStyle from "@/core/application/components/layout/GlobalStyle";
+import Head from "next/head";
 
 const messages: Record<string, any> = {
-  fr: localesFr,
-  en: localesEn
+    fr: localesFr,
+    en: localesEn
 }
 
-const App = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter()
-  const [locale, setLocale] = useState<string>(DEFAULT_LOCALE)
 
-  useEffect(() => {
-    if (router.locale && router.locale in messages) {
-      setLocale(router.locale)
-    }
-  }, [router.locale])
+const App = ({Component, pageProps}: AppProps) => {
+    const router = useRouter()
+    const [locale, setLocale] = useState<string>(DEFAULT_LOCALE)
 
-  return (
-    <ThemeProvider theme={Theme}>
-      <DependenciesContainerContext.Provider value={createDependencies()}>
-        <GlobalStyle />
-        <IntlProvider messages={messages[locale]} locale={locale} defaultLocale={DEFAULT_LOCALE}>
-          <Component {...pageProps} />
-          <Link legacyBehavior href="/" locale={locale === 'fr' ? 'en' : 'fr'}>
-            <a>
-              <Locale selected={locale === 'en'}>EN</Locale>&nbsp;/&nbsp;<Locale selected={locale === 'fr'}>FR</Locale>
-            </a>
-          </Link>
-        </IntlProvider>
-      </DependenciesContainerContext.Provider>
-    </ThemeProvider>
-  )
+    useEffect(() => {
+        if (router.locale && router.locale in messages) {
+            setLocale(router.locale)
+        }
+    }, [router.locale])
+
+    return (
+        <>
+            <Head>
+                <title>Wambi</title>
+            </Head>
+            <ThemeProvider theme={Theme}>
+                <DependenciesContainerContext.Provider value={createDependencies()}>
+                    <IntlProvider messages={messages[locale]} locale={locale} defaultLocale={DEFAULT_LOCALE}>
+                        <GlobalStyle/>
+                        <Component {...pageProps} />
+                    </IntlProvider>
+                </DependenciesContainerContext.Provider>
+            </ThemeProvider>
+        </>
+    )
 }
-export default App
+export default withTranslateRoutes(App)
 
 interface LocaleProps {
-  selected: boolean
+    selected: boolean
 }
 
 const Locale = styled.span<LocaleProps>`
-  text-decoration: ${({ selected }) => (selected ? 'underline' : 'none')};
+  text-decoration: ${({selected}) => (selected ? 'underline' : 'none')};
 `
 
-const GlobalStyle = createGlobalStyle`
-  html {
-    font-family: 'Roboto', sans-serif;
-    font-size: 10px;
-    height: 100vh;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    color: ${({ theme }) => theme.text.color.black};
-    background: #FFF;
-    border: 1px 
-  }
-
-  #root {
-    min-height: 100%;
-  }
-
-  button {
-    background-color: transparent;
-    border: none;
-  }
-
-  input[type=number] {
-    -moz-appearance: textfield; /* Firefox */
-  }
-
-  input, textarea {
-    /* Remove ios safari input inner shadow */
-    appearance: none;
-    font-family: 'Roboto', sans-serif;
-    outline: none;
-  }
-
-  b, strong {
-    font-weight: ${({ theme }) => theme.text.weight.bold};
-  }
-`

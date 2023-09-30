@@ -38,14 +38,14 @@ const AboutSection: React.FC<IAboutSectionProps> = ({items}) => {
             <AboutWrapper className='custom-container'>
                 <AboutSubContainer>
                     <Row className='row'>
-                        <AboutItemContainer className='col-lg-4'>
+                        <AboutItemContainer className='col-md-12 col-lg-4'>
                             <AboutMainMobile className='about-img'>
                                 <Fade left>
                                     <img src={Assets.images.mainMobile1}/>
                                 </Fade>
                             </AboutMainMobile>
                         </AboutItemContainer>
-                        <AboutItemContainer className='col-lg-8'>
+                        <AboutItemContainer className='col-md-12 col-lg-8'>
                             <AboutList className='about-list'>
                                 {
                                     items?.map((item, index) => (

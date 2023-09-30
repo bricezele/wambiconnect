@@ -102,7 +102,7 @@ const ServiceContainer = styled.section`
   margin-top: 0;
 
   @media ${breakpoints.tabletL} {
-    padding: 80px 0 300px 0;
+    padding: 80px 0 20px 0;
     margin-top: -300px;
   }
 `
@@ -165,7 +165,11 @@ const ServiceInfoTitle = styled(Title3)`
 const ServiceImageContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+
+  @media ${breakpoints.tabletL} {
+    justify-content: space-between;
+  }
 `
 
 const ServiceImageWrapper = styled.div`
@@ -190,7 +194,6 @@ const ServiceImageWrapper = styled.div`
 const ServiceMainInfoWrapper = styled.div`
   top: 50%;
   right: 0;
-  padding-top: 70px;
   position: static;
   width: 100%;
   transform: inherit;
@@ -199,6 +202,7 @@ const ServiceMainInfoWrapper = styled.div`
     width: 58%;
     position: absolute;
     transform: translateY(-50%);
+    padding-top: 70px;
   }
 `
 

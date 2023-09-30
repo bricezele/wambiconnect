@@ -3,6 +3,8 @@ import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import {breakpoints, deviceSizes} from "@/themes/breakpoints";
+import useMediaQuery from "@/core/application/hooks/useMediaQuery";
 
 /**
  * @Project wambi-connect
@@ -21,9 +23,9 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
     const sliderNavRef = useRef<Slider>(null)
 
     return (
-        <TestimonialSectionContainer className='testimonial'>
+        <TestimonialSectionContainer>
             <TestimonialSectionWrapper className='custom-container'>
-                <TestimonialSlider>
+                <TestimonialSlider className='testimonial-slider'>
                     <Slider arrows={false}
                             ref={sliderCommentRef}
                             asNavFor={sliderNavRef.current!}
@@ -31,7 +33,7 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
                             fade
                             slidesToShow={1}
                             slidesToScroll={1}>
-                        <TestimonialUserComment>
+                        <TestimonialUserComment className='user-comment'>
                             <TestimonialUserCommentContent>
                                 Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
                                 rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
@@ -39,7 +41,7 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
                                 lorem.
                             </TestimonialUserCommentContent>
                         </TestimonialUserComment>
-                        <TestimonialUserComment>
+                        <TestimonialUserComment className='user-comment'>
                             <TestimonialUserCommentContent>
                                 Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
                                 rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
@@ -47,7 +49,7 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
                                 lorem.
                             </TestimonialUserCommentContent>
                         </TestimonialUserComment>
-                        <TestimonialUserComment>
+                        <TestimonialUserComment className='user-comment'>
                             <TestimonialUserCommentContent>
                                 Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
                                 rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
@@ -55,7 +57,7 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
                                 lorem.
                             </TestimonialUserCommentContent>
                         </TestimonialUserComment>
-                        <TestimonialUserComment>
+                        <TestimonialUserComment className='user-comment'>
                             <TestimonialUserCommentContent>
                                 Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
                                 rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
@@ -63,7 +65,47 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
                                 lorem.
                             </TestimonialUserCommentContent>
                         </TestimonialUserComment>
-                        <TestimonialUserComment>
+                        <TestimonialUserComment className='user-comment'>
+                            <TestimonialUserCommentContent>
+                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
+                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
+                                imperdiet
+                                lorem.
+                            </TestimonialUserCommentContent>
+                        </TestimonialUserComment>
+                        <TestimonialUserComment className='user-comment'>
+                            <TestimonialUserCommentContent>
+                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
+                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
+                                imperdiet
+                                lorem.
+                            </TestimonialUserCommentContent>
+                        </TestimonialUserComment>
+                        <TestimonialUserComment className='user-comment'>
+                            <TestimonialUserCommentContent>
+                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
+                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
+                                imperdiet
+                                lorem.
+                            </TestimonialUserCommentContent>
+                        </TestimonialUserComment>
+                        <TestimonialUserComment className='user-comment'>
+                            <TestimonialUserCommentContent>
+                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
+                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
+                                imperdiet
+                                lorem.
+                            </TestimonialUserCommentContent>
+                        </TestimonialUserComment>
+                        <TestimonialUserComment className='user-comment'>
+                            <TestimonialUserCommentContent>
+                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
+                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
+                                imperdiet
+                                lorem.
+                            </TestimonialUserCommentContent>
+                        </TestimonialUserComment>
+                        <TestimonialUserComment className='user-comment'>
                             <TestimonialUserCommentContent>
                                 Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
                                 rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
@@ -73,7 +115,7 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
                         </TestimonialUserComment>
                     </Slider>
                 </TestimonialSlider>
-                <TestimonialNavSlider>
+                <TestimonialNavSlider className='testimonial-nav'>
                     <Slider ref={sliderNavRef}
                             slidesToShow={5}
                             slidesToScroll={1}
@@ -101,31 +143,76 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
                                 }
                             ]}
                     >
-                        <TestimonialUserInfo>
-                            <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                            <h3>Omar Hampton</h3>
-                            <span>Designer</span>
-                        </TestimonialUserInfo>
-                        <TestimonialUserInfo>
-                            <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                            <h3>Omar Hampton</h3>
-                            <span>Designer</span>
-                        </TestimonialUserInfo>
-                        <TestimonialUserInfo>
-                            <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                            <h3>Omar Hampton</h3>
-                            <span>Designer</span>
-                        </TestimonialUserInfo>
-                        <TestimonialUserInfo>
-                            <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                            <h3>Omar Hampton</h3>
-                            <span>Designer</span>
-                        </TestimonialUserInfo>
-                        <TestimonialUserInfo>
-                            <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                            <h3>Omar Hampton</h3>
-                            <span>Designer</span>
-                        </TestimonialUserInfo>
+                        <TestimonialUserInfoWrapper>
+                            <TestimonialUserInfo className='user-info'>
+                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
+                                <h3>Omar Hampton</h3>
+                                <span>Designer</span>
+                            </TestimonialUserInfo>
+                        </TestimonialUserInfoWrapper>
+                        <TestimonialUserInfoWrapper>
+                            <TestimonialUserInfo className='user-info'>
+                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
+                                <h3>Omar Hampton</h3>
+                                <span>Designer</span>
+                            </TestimonialUserInfo>
+                        </TestimonialUserInfoWrapper>
+                        <TestimonialUserInfoWrapper>
+                            <TestimonialUserInfo className='user-info'>
+                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
+                                <h3>Omar Hampton</h3>
+                                <span>Designer</span>
+                            </TestimonialUserInfo>
+                        </TestimonialUserInfoWrapper>
+                        <TestimonialUserInfoWrapper>
+                            <TestimonialUserInfo className='user-info'>
+                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
+                                <h3>Omar Hampton</h3>
+                                <span>Designer</span>
+                            </TestimonialUserInfo>
+                        </TestimonialUserInfoWrapper>
+                        <TestimonialUserInfoWrapper>
+                            <TestimonialUserInfo className='user-info'>
+                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
+                                <h3>Omar Hampton</h3>
+                                <span>Designer</span>
+                            </TestimonialUserInfo>
+                        </TestimonialUserInfoWrapper>
+                        <TestimonialUserInfoWrapper>
+                            <TestimonialUserInfo className='user-info'>
+                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
+                                <h3>Omar Hampton</h3>
+                                <span>Designer</span>
+                            </TestimonialUserInfo>
+                        </TestimonialUserInfoWrapper>
+                        <TestimonialUserInfoWrapper>
+                            <TestimonialUserInfo className='user-info'>
+                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
+                                <h3>Omar Hampton</h3>
+                                <span>Designer</span>
+                            </TestimonialUserInfo>
+                        </TestimonialUserInfoWrapper>
+                        <TestimonialUserInfoWrapper>
+                            <TestimonialUserInfo className='user-info'>
+                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
+                                <h3>Omar Hampton</h3>
+                                <span>Designer</span>
+                            </TestimonialUserInfo>
+                        </TestimonialUserInfoWrapper>
+                        <TestimonialUserInfoWrapper>
+                            <TestimonialUserInfo className='user-info'>
+                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
+                                <h3>Omar Hampton</h3>
+                                <span>Designer</span>
+                            </TestimonialUserInfo>
+                        </TestimonialUserInfoWrapper>
+                        <TestimonialUserInfoWrapper>
+                            <TestimonialUserInfo className='user-info'>
+                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
+                                <h3>Omar Hampton</h3>
+                                <span>Designer</span>
+                            </TestimonialUserInfo>
+                        </TestimonialUserInfoWrapper>
                     </Slider>
                 </TestimonialNavSlider>
             </TestimonialSectionWrapper>
@@ -133,22 +220,33 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
     )
 }
 
+
 const TestimonialSectionContainer = styled.section`
   padding: 100px 0 50px 0;
-  margin-top: -300px;
+  position: relative;
+
+  &:before {
+
+  }
 `
 const TestimonialSectionWrapper = styled.div`
   max-width: 1410px;
   margin: 0 auto;
 `
 const TestimonialSlider = styled.div`
-  width: 850px;
+  width: 100%;
   margin: 0 auto;
+
+  @media ${breakpoints.tabletL} {
+    width: 850px;
+  }
 `
 const TestimonialNavSlider = styled.div`
   width: 100%;
   text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   &:before {
     content: '';
@@ -177,7 +275,10 @@ const TestimonialUserComment = styled.div`
   padding: 20px 0 40px 0;
   text-align: center;
   position: relative;
-  background-image: url(/images/comm2.png);
+
+  @media ${breakpoints.tabletL} {
+    min-height: 300px;
+  }
 
   &:before {
     content: '';
@@ -187,6 +288,9 @@ const TestimonialUserComment = styled.div`
     transform: translateX(-50%);
     width: 416px;
     height: 275px;
+    background-image: url(/images/comm2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 `
 const TestimonialUserCommentContent = styled.p`
@@ -194,31 +298,52 @@ const TestimonialUserCommentContent = styled.p`
   font-weight: 400;
   line-height: 46px;
 `
+
+const TestimonialUserInfoWrapper = styled.div``
+
 const TestimonialUserInfo = styled.div`
   text-align: center;
   cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 13px;
+
+  @media ${breakpoints.tabletL} {
+    row-gap: 0;
+  }
 
   img {
     width: 65px;
     object-fit: cover;
     display: inline-block;
-    padding-bottom: 35px;
+    padding-bottom: 0;
+
+    @media ${breakpoints.tabletL} {
+      padding-bottom: 35px;
+    }
   }
 
   h3 {
-    font-size: 24px;
     font-weight: 700;
     text-transform: capitalize;
     margin-top: 20px;
     margin-bottom: 7px;
     opacity: 0;
     visibility: hidden;
+    display: inline-block;
+
+    @media ${breakpoints.laptopM} {
+      font-size: 24px;
+    }
   }
 
   span {
     opacity: 0;
     visibility: hidden;
     font-size: 16px;
+    display: block;
   }
 
 `

@@ -60,12 +60,13 @@ const ModalBackground = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  z-index: 100;
+  z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(28, 28, 28, 0.19);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: opacity 0.3s ease-out;
 `
 const ModalAlign = styled.div`
@@ -76,8 +77,8 @@ const ModalAlign = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 101;
-  max-width: 95%;
+  z-index: 2000;
+  max-width: 100%;
 `
 const ModalContent = styled.div`
   width: 800px;

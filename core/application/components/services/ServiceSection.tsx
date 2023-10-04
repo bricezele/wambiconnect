@@ -13,8 +13,24 @@ import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 import LinkWrapper from "@/core/application/components/common/LinkWrapper";
 import {breakpoints} from "@/themes/breakpoints";
+import {FormattedMessage} from "react-intl";
 
-const ServiceSection: React.FC = ({}) => {
+interface IServiceProps {
+    icon: string
+    title: string
+    description: string
+}
+
+interface IServiceSectionProps {
+    title: string
+    description: string
+    services: IServiceProps[]
+}
+
+const ServiceSection: React.FC<IServiceSectionProps> = ({
+                                                            title,
+                                                            description, services
+                                                        }) => {
 
     return (
         <ServiceContainer className='services'>
@@ -24,48 +40,22 @@ const ServiceSection: React.FC = ({}) => {
                     <Row>
                         <div className='col-lg-4' style={{display: 'flex', alignItems: 'center'}}>
                             <ServiceList className='services-list'>
-                                <Fade bottom duration={700} delay={0}>
-                                    <ServiceDetail className='service-details'>
+                                {
+                                    services.map((service, index) => (
+                                        <Fade bottom duration={700} delay={index * 100} key={index}>
+                                            <ServiceDetail className='service-details'>
                                         <span>
-                                            <i className="mdi mdi-checkbox-marked-circle-outline"></i>
+                                            <i className={service.icon}></i>
                                         </span>
-                                        <ServiceInfo className='service-info'>
-                                            <ServiceInfoTitle>Morbi purus diam</ServiceInfoTitle>
-                                            <Paragraph>
-                                                In ipsum nisl, congue et diam eu, suscipit pulvinar nisl. Suspendisse
-                                                accumsan ultricies mi gravida hendrerit.
-                                            </Paragraph>
-                                        </ServiceInfo>
-                                    </ServiceDetail>
-                                </Fade>
-                                <Fade bottom duration={700} delay={100}>
-                                    <ServiceDetail className='service-details'>
-                                    <span>
-                                        <i className="mdi mdi-checkbox-marked-circle-outline"></i>
-                                    </span>
-                                        <ServiceInfo className='service-info'>
-                                            <ServiceInfoTitle>Morbi purus diam</ServiceInfoTitle>
-                                            <Paragraph>
-                                                In ipsum nisl, congue et diam eu, suscipit pulvinar nisl. Suspendisse
-                                                accumsan ultricies mi gravida hendrerit.
-                                            </Paragraph>
-                                        </ServiceInfo>
-                                    </ServiceDetail>
-                                </Fade>
-                                <Fade bottom duration={700} delay={200}>
-                                    <ServiceDetail className='service-details'>
-                                    <span>
-                                        <i className="mdi mdi-checkbox-marked-circle-outline"></i>
-                                    </span>
-                                        <ServiceInfo className='service-info'>
-                                            <ServiceInfoTitle>Morbi purus diam</ServiceInfoTitle>
-                                            <Paragraph>
-                                                In ipsum nisl, congue et diam eu, suscipit pulvinar nisl. Suspendisse
-                                                accumsan ultricies mi gravida hendrerit.
-                                            </Paragraph>
-                                        </ServiceInfo>
-                                    </ServiceDetail>
-                                </Fade>
+                                                <ServiceInfo className='service-info'>
+                                                    <ServiceInfoTitle><FormattedMessage id={service.title}/>
+                                                    </ServiceInfoTitle>
+                                                    <Paragraph><FormattedMessage id={service.description}/></Paragraph>
+                                                </ServiceInfo>
+                                            </ServiceDetail>
+                                        </Fade>
+                                    ))
+                                }
                             </ServiceList>
                         </div>
                         <Fade right>
@@ -74,17 +64,12 @@ const ServiceSection: React.FC = ({}) => {
                                     <ServiceImageContainer>
                                         <ServiceImageWrapper className='service-img'>
                                             <img src={Assets.images.shape2}/>
-                                            {/*<Link href='#' isExternalLink>
-                                                <img src={Assets.images.play}/>
-                                            </Link>*/}
                                         </ServiceImageWrapper>
                                     </ServiceImageContainer>
                                     <ServiceMainInfoWrapper>
-                                        <ServiceInfoTitle3>It’s easier than ease.</ServiceInfoTitle3>
-                                        <ServiceInfoDescription>
-                                            Morbi posuere aliquet ante, nec mollis mi bibendum vestibulum.
-                                            Mauris dapibus tortor mi, in posuere augue dapibus id.
-                                        </ServiceInfoDescription>
+                                        <ServiceInfoTitle3><FormattedMessage id={title}/> </ServiceInfoTitle3>
+                                        <ServiceInfoDescription><FormattedMessage
+                                            id={description}/></ServiceInfoDescription>
                                     </ServiceMainInfoWrapper>
                                 </Row>
                             </div>

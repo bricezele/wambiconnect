@@ -48,8 +48,8 @@ const AboutSection: React.FC<IAboutSectionProps> = ({items}) => {
                         <AboutItemContainer className='col-md-12 col-lg-8'>
                             <AboutList className='about-list'>
                                 {
-                                    items?.map((item, index) => (
-                                        <Fade bottom duration={700} delay={index * 100}>
+                                    items.map((item, index) => (
+                                        <Fade bottom duration={700} delay={index * 100} key={`info_${index}`}>
                                             <AboutInfo className='about-info'>
                                                 <AboutNumber className={`st${index + 1}`}>
                                                     <AboutNumberTitle>

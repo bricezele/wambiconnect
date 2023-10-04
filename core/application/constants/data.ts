@@ -75,6 +75,91 @@ export const Data = {
                 title: 'Home.About.Simple.And.Easy',
                 description: 'Home.About.Simple.And.Easy.Description',
             },
+        ],
+        downloadCTASection: {
+            title: 'Home.DownloadCTA.Title',
+            description: 'Home.DownloadCTA.Description',
+            ctaLabel: [
+                {
+                    link: 'https://play.google.com/store/apps/details?id=com.wambi',
+                    image: Assets.images.getItOnPlayStore
+                },
+                {
+                    link: 'https://play.google.com/store/apps/details?id=com.wambi',
+                    image: Assets.images.getItOnAppStore
+                },
+            ],
+        },
+        serviceSection: {
+            title: 'Home.Service.Title',
+            description: 'Home.Service.Description',
+            services: [
+                {
+                    icon: 'mdi mdi-checkbox-marked-circle-outline',
+                    title: 'Home.Service.Service1.Title',
+                    description: 'Home.Service.Service1.Description'
+                },
+                {
+                    icon: 'mdi mdi-checkbox-marked-circle-outline',
+                    title: 'Home.Service.Service2.Title',
+                    description: 'Home.Service.Service2.Description'
+                },
+                {
+                    icon: 'mdi mdi-checkbox-marked-circle-outline',
+                    title: 'Home.Service.Service3.Title',
+                    description: 'Home.Service.Service3.Description'
+                },
+            ]
+        },
+        testimonialSection: [
+            {
+                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
+                name: 'Omar Hampton',
+                role: 'Home.Reviews.Reviews1.Role',
+                review: 'Home.Reviews.Reviews1'
+            },
+            {
+                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
+                name: 'Omar Hampton',
+                role: 'Home.Reviews.Reviews2.Role',
+                review: 'Home.Reviews.Reviews2'
+            },
+            {
+                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
+                name: 'Omar Hampton',
+                role: 'Home.Reviews.Reviews3.Role',
+                review: 'Home.Reviews.Reviews3'
+            },
+            {
+                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
+                name: 'Omar Hampton',
+                role: 'Home.Reviews.Reviews4.Role',
+                review: 'Home.Reviews.Reviews4'
+            },
+            {
+                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
+                name: 'Omar Hampton',
+                role: 'Home.Reviews.Reviews5.Role',
+                review: 'Home.Reviews.Reviews5'
+            },
+            {
+                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
+                name: 'Omar Hampton',
+                role: 'Home.Reviews.Reviews5.Role',
+                review: 'Home.Reviews.Reviews5'
+            },
+            {
+                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
+                name: 'Omar Hampton',
+                role: 'Home.Reviews.Reviews5.Role',
+                review: 'Home.Reviews.Reviews5'
+            },
+            {
+                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
+                name: 'Omar Hampton',
+                role: 'Home.Reviews.Reviews5.Role',
+                review: 'Home.Reviews.Reviews5'
+            },
         ]
     }
 }

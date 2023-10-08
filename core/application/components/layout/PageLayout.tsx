@@ -11,6 +11,7 @@ import {NavRoute} from '../../constants/routes'
 import Header from '../header/Header'
 import {PageInfoContext, pageInfoDefault} from '../../contexts/PageInfoContext'
 import {Locale} from "@/core/domain/enums/Locale"
+import Footer from "@/core/application/footer/Footer";
 
 // Component definition
 // --------------------------------------------------------------------------------------
@@ -39,6 +40,7 @@ const PageLayout: React.FC<PropsWithChildren<Props>> = ({
                 <MainContent role="main">
                     {children}
                 </MainContent>
+                <Footer/>
             </PageInfoContext.Provider>
         </PageLayoutContainer>
     )

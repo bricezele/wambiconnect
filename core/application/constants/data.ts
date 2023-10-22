@@ -58,8 +58,8 @@ export const Data = {
             },
             {
                 image: Assets.images.socialFeature,
-                title: 'Home.Features.MarketPlace',
-                description: 'Home.Features.MarketPlace.Description',
+                title: 'Home.Features.Revolution',
+                description: 'Home.Features.Revolution.Description',
             },
         ],
         aboutSection: [
@@ -68,12 +68,12 @@ export const Data = {
                 description: 'Home.About.Simple.And.Easy.Description',
             },
             {
-                title: 'Home.About.Simple.And.Easy',
-                description: 'Home.About.Simple.And.Easy.Description',
+                title: 'Home.About.Simple.And.Easy2',
+                description: 'Home.About.Simple.And.Easy.Description2',
             },
             {
-                title: 'Home.About.Simple.And.Easy',
-                description: 'Home.About.Simple.And.Easy.Description',
+                title: 'Home.About.Simple.And.Easy3',
+                description: 'Home.About.Simple.And.Easy.Description3',
             },
         ],
         downloadCTASection: {

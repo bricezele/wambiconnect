@@ -34,11 +34,11 @@ const TeamSection: React.FC<ITeamSectionProps> = ({}) => {
                         <TeamItem>
                             <TeamItemWrapper>
                                 <TeamItemImage
-                                    src='//images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/bb4a3324cba15018a0c8e5ad/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?version='/>
+                                    src='https://media.licdn.com/dms/image/C4D03AQEqS5U4xDng2g/profile-displayphoto-shrink_400_400/0/1593542905271?e=1703721600&v=beta&t=WlWyw9_cxiZwej4BMVnPKIU25Ym3SGNHuMt6gcsbQMQ'/>
                                 <TeamItemDetailContainer>
                                     <TeamItemDetailWrapper>
-                                        <TeamAuthor>Celia Almeda</TeamAuthor>
-                                        <TeamRole>Advertising Manager</TeamRole>
+                                        <TeamAuthor>Romuald Esdras Wandji</TeamAuthor>
+                                        <TeamRole>CEO and Software Developer</TeamRole>
                                         <TeamSocialContainer>
                                             <TeamSocial href='#'>
                                                 <i className='mdi mdi-twitter'/>
@@ -57,11 +57,11 @@ const TeamSection: React.FC<ITeamSectionProps> = ({}) => {
                         <TeamItem>
                             <TeamItemWrapper>
                                 <TeamItemImage
-                                    src='//images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/bb4a3324cba15018a0c8e5ad/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?version='/>
+                                    src='https://media.licdn.com/dms/image/C4E03AQGSBWF39c-BMA/profile-displayphoto-shrink_400_400/0/1660568178851?e=1703721600&v=beta&t=TaguC43_B_5H7rpXZZaIyZwhtRYz-njUnzoAT4LVEes'/>
                                 <TeamItemDetailContainer>
                                     <TeamItemDetailWrapper>
-                                        <TeamAuthor>Celia Almeda</TeamAuthor>
-                                        <TeamRole>Advertising Manager</TeamRole>
+                                        <TeamAuthor>Brice Zele</TeamAuthor>
+                                        <TeamRole>Co-Founder and Software Developer</TeamRole>
                                         <TeamSocialContainer>
                                             <TeamSocial href='#'>
                                                 <i className='mdi mdi-twitter'/>
@@ -80,11 +80,11 @@ const TeamSection: React.FC<ITeamSectionProps> = ({}) => {
                         <TeamItem>
                             <TeamItemWrapper>
                                 <TeamItemImage
-                                    src='//images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/bb4a3324cba15018a0c8e5ad/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?version='/>
+                                    src='https://media.licdn.com/dms/image/C4E03AQH1fYGN6-5sEw/profile-displayphoto-shrink_400_400/0/1657494103741?e=1703721600&v=beta&t=-Dk-qplDnFbPo-iMo_rOzoy2UAnLcWATyex6ryVWcdg'/>
                                 <TeamItemDetailContainer>
                                     <TeamItemDetailWrapper>
-                                        <TeamAuthor>Celia Almeda</TeamAuthor>
-                                        <TeamRole>Advertising Manager</TeamRole>
+                                        <TeamAuthor>Emerson N. Wepngong</TeamAuthor>
+                                        <TeamRole>Co-Founder and Product Designer</TeamRole>
                                         <TeamSocialContainer>
                                             <TeamSocial href='#'>
                                                 <i className='mdi mdi-twitter'/>

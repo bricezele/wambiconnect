@@ -25,11 +25,7 @@ const Footer: React.FC<IFooterProps> = ({}) => {
                                 <FulltWidth>
                                     <TitleFooter>About</TitleFooter>
                                     <ParagraphFooter>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur.
+                                    At Wambi, we are a team of passionate individuals committed to revolutionizing the way people connect, buy, and sell in the online marketplace industry. Our vision is to create a global platform that brings buyers and sellers together, regardless of their geographic location.Behind Wambi is a diverse and talented team of professionals, each bringing their unique expertise to the table. From visionary developers to creative designers, meticulous marketers to customer-centric support staff, we work seamlessly together to deliver a cutting-edge mobile app that exceeds your expectations.
                                     </ParagraphFooter>
                                 </FulltWidth>
                             </div>
@@ -37,10 +33,9 @@ const Footer: React.FC<IFooterProps> = ({}) => {
                                 <FulltWidth>
                                     <TitleFooter>Contacts</TitleFooter>
                                     <ContactList>
-                                        <li>Address: 4578 Marmora Road, Glasgow, D04 89GR</li>
-                                        <li>Address: 4578 Marmora Road, Glasgow, D04 89GR</li>
-                                        <li>Address: 4578 Marmora Road, Glasgow, D04 89GR</li>
-                                        <li>Address: 4578 Marmora Road, Glasgow, D04 89GR</li>
+                                        <li>Address: Cite sic - A COTE SANTA LUCIA Douala, Cameroon.</li>
+                                        <li>Address: 1A Hughes Ave, Yaba, Lagos, Nigeria.</li>
+                                        <li>Email: support@wambi.cc</li>
                                     </ContactList>
                                 </FulltWidth>
                             </div>

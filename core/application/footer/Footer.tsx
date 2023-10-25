@@ -21,15 +21,22 @@ const Footer: React.FC<IFooterProps> = ({}) => {
                 <Wrapper>
                     <FulltWidth>
                         <div className='row'>
-                            <div className='col-lg-3 col-md-6'>
+                            <div className='col-lg-6 col-md-6'>
                                 <FulltWidth>
                                     <TitleFooter>About</TitleFooter>
                                     <ParagraphFooter>
-                                    At Wambi, we are a team of passionate individuals committed to revolutionizing the way people connect, buy, and sell in the online marketplace industry. Our vision is to create a global platform that brings buyers and sellers together, regardless of their geographic location.Behind Wambi is a diverse and talented team of professionals, each bringing their unique expertise to the table. From visionary developers to creative designers, meticulous marketers to customer-centric support staff, we work seamlessly together to deliver a cutting-edge mobile app that exceeds your expectations.
+                                        At Wambi, we are a team of passionate individuals committed to revolutionizing
+                                        the way people connect, buy, and sell in the online marketplace industry. Our
+                                        vision is to create a global platform that brings buyers and sellers together,
+                                        regardless of their geographic location.Behind Wambi is a diverse and talented
+                                        team of professionals, each bringing their unique expertise to the table. From
+                                        visionary developers to creative designers, meticulous marketers to
+                                        customer-centric support staff, we work seamlessly together to deliver a
+                                        cutting-edge mobile app that exceeds your expectations.
                                     </ParagraphFooter>
                                 </FulltWidth>
                             </div>
-                            <div className='col-lg-3 col-md-6'>
+                            <div className='col-lg-6 col-md-6'>
                                 <FulltWidth>
                                     <TitleFooter>Contacts</TitleFooter>
                                     <ContactList>
@@ -39,14 +46,11 @@ const Footer: React.FC<IFooterProps> = ({}) => {
                                     </ContactList>
                                 </FulltWidth>
                             </div>
-                            <div className='col-lg-6 col-md-12'>
-
-                            </div>
                         </div>
                     </FulltWidth>
                 </Wrapper>
             </TopContainer>
-            <BottomFooter>
+            {/*            <BottomFooter>
                 <Wrapper>
                     <div className='row'>
                         <div className='col-lg-3 col-md-6'>
@@ -62,7 +66,7 @@ const Footer: React.FC<IFooterProps> = ({}) => {
                         </div>
                     </div>
                 </Wrapper>
-            </BottomFooter>
+            </BottomFooter>*/}
         </Container>
     )
 }

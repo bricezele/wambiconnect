@@ -54,7 +54,7 @@ const BannerSection: React.FC<IMainSectionProps> = ({
             {showModal && <Modal toggleModal={toggleModal}>
                 <iframe
                     loading="lazy"
-                    src="https://www.youtube.com/embed/4UZrsTqkcW4"
+                    src="https://www.youtube.com/embed/EA3yfYZUOUQ"
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

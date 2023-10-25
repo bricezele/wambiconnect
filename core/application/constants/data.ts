@@ -26,7 +26,7 @@ export const Data = {
                     image: Assets.images.getItOnPlayStore
                 },
                 {
-                    link: 'https://play.google.com/store/apps/details?id=com.wambi',
+                    link: 'https://apps.apple.com/us/app/wambi/id1592188364',
                     image: Assets.images.getItOnAppStore
                 },
             ],
@@ -85,7 +85,7 @@ export const Data = {
                     image: Assets.images.getItOnPlayStore
                 },
                 {
-                    link: 'https://play.google.com/store/apps/details?id=com.wambi',
+                    link: 'https://apps.apple.com/us/app/wambi/id1592188364',
                     image: Assets.images.getItOnAppStore
                 },
             ],
@@ -113,50 +113,50 @@ export const Data = {
         },
         testimonialSection: [
             {
-                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
-                name: 'Omar Hampton',
+                image: 'https://www.amaraventures.in/assets/uploads/testimonial/user.png',
+                name: 'Dorene Aupry',
                 role: 'Home.Reviews.Reviews1.Role',
                 review: 'Home.Reviews.Reviews1'
             },
             {
-                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
-                name: 'Omar Hampton',
+                image: 'https://www.amaraventures.in/assets/uploads/testimonial/user.png',
+                name: 'Chinwemma Anenechukwu',
                 role: 'Home.Reviews.Reviews2.Role',
                 review: 'Home.Reviews.Reviews2'
             },
             {
-                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
-                name: 'Omar Hampton',
+                image: 'https://www.amaraventures.in/assets/uploads/testimonial/user.png',
+                name: 'Chifo Iloerika',
                 role: 'Home.Reviews.Reviews3.Role',
                 review: 'Home.Reviews.Reviews3'
             },
             {
-                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
-                name: 'Omar Hampton',
+                image: 'https://www.amaraventures.in/assets/uploads/testimonial/user.png',
+                name: 'Adaora Okechukwu',
                 role: 'Home.Reviews.Reviews4.Role',
                 review: 'Home.Reviews.Reviews4'
             },
             {
-                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
-                name: 'Omar Hampton',
+                image: 'https://www.amaraventures.in/assets/uploads/testimonial/user.png',
+                name: 'Iloabuchi Ndukaku',
                 role: 'Home.Reviews.Reviews5.Role',
                 review: 'Home.Reviews.Reviews5'
             },
             {
-                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
-                name: 'Omar Hampton',
+                image: 'https://www.amaraventures.in/assets/uploads/testimonial/user.png',
+                name: 'Elewechi Kemdirim',
                 role: 'Home.Reviews.Reviews5.Role',
                 review: 'Home.Reviews.Reviews5'
             },
             {
-                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
-                name: 'Omar Hampton',
+                image: 'https://www.amaraventures.in/assets/uploads/testimonial/user.png',
+                name: 'Anayolisa Amaechi',
                 role: 'Home.Reviews.Reviews5.Role',
                 review: 'Home.Reviews.Reviews5'
             },
             {
-                image: 'http://paul-themes.com/html/appmicron/images/resources/user-img2.png',
-                name: 'Omar Hampton',
+                image: 'https://www.amaraventures.in/assets/uploads/testimonial/user.png',
+                name: 'Chifo Chike',
                 role: 'Home.Reviews.Reviews5.Role',
                 review: 'Home.Reviews.Reviews5'
             },

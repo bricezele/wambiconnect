@@ -18,6 +18,7 @@ export const Assets = {
         marketPlaceFeature: '/images/feature/marketplace.jpg',
         shape2: '/images/shape2.png',
         play: '/images/play.png',
+        ctaBanner: '/images/cta-banner.png',
     },
     svgs: {
         icons: {

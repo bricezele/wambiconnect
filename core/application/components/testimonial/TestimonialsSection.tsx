@@ -4,7 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import {breakpoints, deviceSizes} from "@/themes/breakpoints";
-import useMediaQuery from "@/core/application/hooks/useMediaQuery";
+// @ts-ignore
+import Fade from "react-reveal/Fade";
+import {FormattedMessage} from "react-intl";
 
 /**
  * @Project wambi-connect
@@ -13,11 +15,20 @@ import useMediaQuery from "@/core/application/hooks/useMediaQuery";
  * @Author BRICE ZELE
  * @Date 26/09/2023
  */
-interface IReviewsSectionProps {
-
+interface IReviewProps {
+    image: string
+    name: string
+    role: string
+    review: string
 }
 
-const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
+interface IReviewsSectionProps {
+    reviews: IReviewProps[]
+}
+
+const TestimonialsSection: React.FC<IReviewsSectionProps> = ({
+                                                                 reviews
+                                                             }) => {
 
     const sliderCommentRef = useRef<Slider>(null)
     const sliderNavRef = useRef<Slider>(null)
@@ -25,196 +36,69 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({}) => {
     return (
         <TestimonialSectionContainer>
             <TestimonialSectionWrapper className='custom-container'>
-                <TestimonialSlider className='testimonial-slider'>
-                    <Slider arrows={false}
-                            ref={sliderCommentRef}
-                            asNavFor={sliderNavRef.current!}
-                            dots={false}
-                            fade
-                            slidesToShow={1}
-                            slidesToScroll={1}>
-                        <TestimonialUserComment className='user-comment'>
-                            <TestimonialUserCommentContent>
-                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
-                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
-                                imperdiet
-                                lorem.
-                            </TestimonialUserCommentContent>
-                        </TestimonialUserComment>
-                        <TestimonialUserComment className='user-comment'>
-                            <TestimonialUserCommentContent>
-                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
-                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
-                                imperdiet
-                                lorem.
-                            </TestimonialUserCommentContent>
-                        </TestimonialUserComment>
-                        <TestimonialUserComment className='user-comment'>
-                            <TestimonialUserCommentContent>
-                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
-                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
-                                imperdiet
-                                lorem.
-                            </TestimonialUserCommentContent>
-                        </TestimonialUserComment>
-                        <TestimonialUserComment className='user-comment'>
-                            <TestimonialUserCommentContent>
-                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
-                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
-                                imperdiet
-                                lorem.
-                            </TestimonialUserCommentContent>
-                        </TestimonialUserComment>
-                        <TestimonialUserComment className='user-comment'>
-                            <TestimonialUserCommentContent>
-                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
-                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
-                                imperdiet
-                                lorem.
-                            </TestimonialUserCommentContent>
-                        </TestimonialUserComment>
-                        <TestimonialUserComment className='user-comment'>
-                            <TestimonialUserCommentContent>
-                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
-                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
-                                imperdiet
-                                lorem.
-                            </TestimonialUserCommentContent>
-                        </TestimonialUserComment>
-                        <TestimonialUserComment className='user-comment'>
-                            <TestimonialUserCommentContent>
-                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
-                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
-                                imperdiet
-                                lorem.
-                            </TestimonialUserCommentContent>
-                        </TestimonialUserComment>
-                        <TestimonialUserComment className='user-comment'>
-                            <TestimonialUserCommentContent>
-                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
-                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
-                                imperdiet
-                                lorem.
-                            </TestimonialUserCommentContent>
-                        </TestimonialUserComment>
-                        <TestimonialUserComment className='user-comment'>
-                            <TestimonialUserCommentContent>
-                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
-                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
-                                imperdiet
-                                lorem.
-                            </TestimonialUserCommentContent>
-                        </TestimonialUserComment>
-                        <TestimonialUserComment className='user-comment'>
-                            <TestimonialUserCommentContent>
-                                Vestibulum scelerisque, sapien eu sollicitudin molestie, ex purus malesuada tortor, id
-                                rutrum mauris ipsum at est. Vivamus lacus leo, ultrices sit amet ex id, maximus
-                                imperdiet
-                                lorem.
-                            </TestimonialUserCommentContent>
-                        </TestimonialUserComment>
-                    </Slider>
-                </TestimonialSlider>
-                <TestimonialNavSlider className='testimonial-nav'>
-                    <Slider ref={sliderNavRef}
-                            slidesToShow={5}
-                            slidesToScroll={1}
-                            asNavFor={sliderCommentRef.current!}
-                            dots={false}
-                            arrows={false}
-                            centerMode
-                            focusOnSelect
-                            responsive={[
-                                {
-                                    breakpoint: 768,
-                                    settings: {
-                                        slidesToShow: 3,
-                                        slidesToScroll: 1,
-                                        infinite: true,
-                                        dots: false
+                <Fade left duration={700} delay={0}>
+                    <TestimonialSlider className='testimonial-slider'>
+                        <Slider arrows={false}
+                                ref={sliderCommentRef}
+                                asNavFor={sliderNavRef.current!}
+                                dots={false}
+                                fade
+                                slidesToShow={1}
+                                slidesToScroll={1}>
+                            {
+                                reviews.map((review, index) => (
+                                    <TestimonialUserComment className='user-comment' key={index}>
+                                        <TestimonialUserCommentContent><FormattedMessage
+                                            id={review.review}/></TestimonialUserCommentContent>
+                                    </TestimonialUserComment>
+                                ))
+                            }
+                        </Slider>
+                    </TestimonialSlider>
+                </Fade>
+                <Fade bottom duration={700} delay={100}>
+                    <TestimonialNavSlider className='testimonial-nav'>
+                        <Slider ref={sliderNavRef}
+                                slidesToShow={5}
+                                slidesToScroll={1}
+                                asNavFor={sliderCommentRef.current!}
+                                dots={false}
+                                arrows={false}
+                                centerMode
+                                focusOnSelect
+                                responsive={[
+                                    {
+                                        breakpoint: 768,
+                                        settings: {
+                                            slidesToShow: 3,
+                                            slidesToScroll: 1,
+                                            infinite: true,
+                                            dots: false
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 576,
+                                        settings: {
+                                            slidesToShow: 1,
+                                            slidesToScroll: 1
+                                        }
                                     }
-                                },
-                                {
-                                    breakpoint: 576,
-                                    settings: {
-                                        slidesToShow: 1,
-                                        slidesToScroll: 1
-                                    }
-                                }
-                            ]}
-                    >
-                        <TestimonialUserInfoWrapper>
-                            <TestimonialUserInfo className='user-info'>
-                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                                <h3>Omar Hampton</h3>
-                                <span>Designer</span>
-                            </TestimonialUserInfo>
-                        </TestimonialUserInfoWrapper>
-                        <TestimonialUserInfoWrapper>
-                            <TestimonialUserInfo className='user-info'>
-                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                                <h3>Omar Hampton</h3>
-                                <span>Designer</span>
-                            </TestimonialUserInfo>
-                        </TestimonialUserInfoWrapper>
-                        <TestimonialUserInfoWrapper>
-                            <TestimonialUserInfo className='user-info'>
-                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                                <h3>Omar Hampton</h3>
-                                <span>Designer</span>
-                            </TestimonialUserInfo>
-                        </TestimonialUserInfoWrapper>
-                        <TestimonialUserInfoWrapper>
-                            <TestimonialUserInfo className='user-info'>
-                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                                <h3>Omar Hampton</h3>
-                                <span>Designer</span>
-                            </TestimonialUserInfo>
-                        </TestimonialUserInfoWrapper>
-                        <TestimonialUserInfoWrapper>
-                            <TestimonialUserInfo className='user-info'>
-                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                                <h3>Omar Hampton</h3>
-                                <span>Designer</span>
-                            </TestimonialUserInfo>
-                        </TestimonialUserInfoWrapper>
-                        <TestimonialUserInfoWrapper>
-                            <TestimonialUserInfo className='user-info'>
-                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                                <h3>Omar Hampton</h3>
-                                <span>Designer</span>
-                            </TestimonialUserInfo>
-                        </TestimonialUserInfoWrapper>
-                        <TestimonialUserInfoWrapper>
-                            <TestimonialUserInfo className='user-info'>
-                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                                <h3>Omar Hampton</h3>
-                                <span>Designer</span>
-                            </TestimonialUserInfo>
-                        </TestimonialUserInfoWrapper>
-                        <TestimonialUserInfoWrapper>
-                            <TestimonialUserInfo className='user-info'>
-                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                                <h3>Omar Hampton</h3>
-                                <span>Designer</span>
-                            </TestimonialUserInfo>
-                        </TestimonialUserInfoWrapper>
-                        <TestimonialUserInfoWrapper>
-                            <TestimonialUserInfo className='user-info'>
-                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                                <h3>Omar Hampton</h3>
-                                <span>Designer</span>
-                            </TestimonialUserInfo>
-                        </TestimonialUserInfoWrapper>
-                        <TestimonialUserInfoWrapper>
-                            <TestimonialUserInfo className='user-info'>
-                                <img src='http://paul-themes.com/html/appmicron/images/resources/user-img2.png'/>
-                                <h3>Omar Hampton</h3>
-                                <span>Designer</span>
-                            </TestimonialUserInfo>
-                        </TestimonialUserInfoWrapper>
-                    </Slider>
-                </TestimonialNavSlider>
+                                ]}
+                        >
+                            {
+                                reviews.map((review, index) => (
+                                    <TestimonialUserInfoWrapper key={index}>
+                                        <TestimonialUserInfo className='user-info'>
+                                            <img src={review.image}/>
+                                            <h3>{review.name}</h3>
+                                            <span><FormattedMessage id={review.role}/></span>
+                                        </TestimonialUserInfo>
+                                    </TestimonialUserInfoWrapper>
+                                ))
+                            }
+                        </Slider>
+                    </TestimonialNavSlider>
+                </Fade>
             </TestimonialSectionWrapper>
         </TestimonialSectionContainer>
     )

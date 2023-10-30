@@ -10,6 +10,8 @@ import FeatureSection from "@/core/application/components/feature/FeatureSection
 import AboutSection from "@/core/application/components/about/AboutSection";
 import ServiceSection from "@/core/application/components/services/ServiceSection";
 import TestimonialsSection from "@/core/application/components/testimonial/TestimonialsSection";
+import DownloadCTASection from "@/core/application/components/banner/DownloadCTASection";
+import TeamSection from "@/core/application/components/team/TeamSection";
 
 const Home: NextPage = () => {
     const intl = useIntl()
@@ -21,10 +23,16 @@ const Home: NextPage = () => {
                            cta={Data.home.bannerSection.ctaLabel}
                            userInfos={Data.home.bannerSection.userInfos}
             />
-            {Data.home.featuresSection && <FeatureSection features={Data.home.featuresSection}/>}
-            {Data.home.aboutSection && <AboutSection items={Data.home.aboutSection}/>}
-            <ServiceSection/>
-            <TestimonialsSection/>
+            <FeatureSection features={Data.home.featuresSection}/>
+            <AboutSection items={Data.home.aboutSection}/>
+            <ServiceSection title={Data.home.serviceSection.title}
+                            description={Data.home.serviceSection.description}
+                            services={Data.home.serviceSection.services}/>
+            <TestimonialsSection reviews={Data.home.testimonialSection}/>
+            <DownloadCTASection cta={Data.home.downloadCTASection.ctaLabel}
+                                title={Data.home.downloadCTASection.title}
+                                description={Data.home.downloadCTASection.description}/>
+            <TeamSection/>
         </PageLayout>
     )
 }

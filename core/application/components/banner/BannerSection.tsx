@@ -17,7 +17,7 @@ import Modal from "@/core/application/components/common/Modal";
  * @Author BRICE ZELE
  * @Date 17/08/2023
  */
-interface ICTAProps {
+export interface ICTAProps {
     link: string
     image: string
 }
@@ -54,7 +54,7 @@ const BannerSection: React.FC<IMainSectionProps> = ({
             {showModal && <Modal toggleModal={toggleModal}>
                 <iframe
                     loading="lazy"
-                    src="https://www.youtube.com/embed/4UZrsTqkcW4"
+                    src="https://www.youtube.com/embed/EA3yfYZUOUQ"
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -407,13 +407,13 @@ const pulseBorder = keyframes`
 
 const PlayButton = styled.div`
   position: absolute;
-  left: 50%;
-  top: 40%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  top: 30%;
+  border-radius: 50%;
   background-color: #007afd;
   box-shadow: 0 0 40px rgba(0, 122, 253, 1);
   opacity: 0.95;
@@ -421,13 +421,24 @@ const PlayButton = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media ${breakpoints.tablet} {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 40%;
+  }
+
   a {
     z-index: 1000;
   }
 
   i {
     color: #fff;
-    font-size: 60px;
+    font-size: 40px;
+
+    @media ${breakpoints.tablet} {
+      font-size: 60px;
+    }
   }
 
 

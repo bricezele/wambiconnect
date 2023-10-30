@@ -4,7 +4,7 @@ RUN apk add --no-cache libc6-compat
 
 USER node
 
-ARG NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-"https://api.appstud.fr"}
+ARG NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-"https://wambiconnect.com"}
 ARG NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
 
 ENV APP_HOME /home/node/app

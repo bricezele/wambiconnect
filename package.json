@@ -1,6 +1,6 @@
 {
-  "name": "appstud-template-nextjs",
-  "version": "0.1.0",
+  "name": "wambi-connect",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",

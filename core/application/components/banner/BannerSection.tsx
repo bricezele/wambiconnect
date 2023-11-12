@@ -1,5 +1,5 @@
-import React, {useCallback, useState} from "react";
-import {breakpoints, deviceSizes} from "@/themes/breakpoints";
+import React, {useState} from "react";
+import {breakpoints} from "@/themes/breakpoints";
 import styled, {css, keyframes} from "styled-components";
 import {Column, Row} from "@/core/application/components/common";
 import {Paragraph, Title2, Title3} from "@/core/application/components/common/Title";

@@ -10,7 +10,12 @@
   "Home.About.Simple.And.Easy3": "Dating",
   "Home.About.Simple.And.Easy.Description3": "Introducing Wambi's Dating feature - the perfect tool to help you connect with like-minded individuals and find your perfect match. With its user-friendly interface and advanced matching algorithms, Wambi's Dating feature makes it easy to find the people you're looking for, based on shared interests, hobbies, and more.",
   "Home.BannerSection.NumberOfUsers": "10k+ active users",
-  "Home.Title": "Accueil",
+  "Home.Title": "Home",
+  "Home.Feature": "Services",
+  "Home.Counter": "Key figures",
+  "Home.Functionnalities": "Functionnalities",
+  "Home.Testimonial": "Testimonial",
+  "Home.Team": "Team",
   "Home.BannerSection.Title": "Wambi",
   "Home.BannerSection.SubTitle": "Boundless connections, endless possibilities",
   "Home.BannerSection.Description": "Wambi is a social networking platform that offers a seamless mix of social and commercial at a single point. For the ultimate experience, download our mobile app!",
@@ -44,5 +49,8 @@
   "Home.Reviews.Reviews4.Role": "User",
   "Home.Reviews.Reviews5": "The in-app messaging is a lifesaver for keeping in touch. It's a fantastic way to stay connected and share moments with loved ones.",
   "Home.Reviews.Reviews5.Role": "User",
-  "Social.Title": "Social"
+  "Social.Title": "Social",
+  "Home.Footer.About": "At Wambi, we are a team of passionate individuals committed to revolutionizing\n the way people connect, buy, and sell in the online marketplace industry. Our\n vision is to create a global platform that brings buyers and sellers together,\nregardless of their geographic location.Behind Wambi is a diverse and talented\n team of professionals, each bringing their unique expertise to the table. From\n visionary developers to creative designers, meticulous marketers to\n customer-centric support staff, we work seamlessly together to deliver a\n cutting-edge mobile app that exceeds your expectations.",
+  "Home.Footer.AboutTitle": "About",
+  "Home.Footer.Address": "Address"
 }

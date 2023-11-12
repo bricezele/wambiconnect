@@ -1,6 +1,5 @@
 import React from 'react'
 import type {NextPage} from 'next'
-import styled from 'styled-components'
 import BannerSection from "@/core/application/components/banner/BannerSection";
 import PageLayout from "@/core/application/components/layout/PageLayout";
 import {NavRoute} from "@/core/application/constants/routes";

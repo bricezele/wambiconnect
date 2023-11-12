@@ -11,6 +11,11 @@
   "Home.About.Simple.And.Easy.Description3": "L'outil parfait pour vous aider à vous connecter avec des personnes partageant les mêmes idées et à trouver votre partenaire idéal. Avec son interface conviviale et ses algorithmes de correspondance avancés, Wambi vous permet de trouver facilement les personnes que vous recherchez.",
   "Home.BannerSection.NumberOfUsers": "10k+ utilisateurs actifs",
   "Home.Title": "Accueil",
+  "Home.Feature": "Services",
+  "Home.Counter": "Chiffres clés",
+  "Home.Functionnalities": "Fonctionnalités",
+  "Home.Testimonial": "Témoignage",
+  "Home.Team": "Equipe",
   "Home.BannerSection.Title": "Wambi",
   "Home.BannerSection.SubTitle": "Connexions illimitées, possibilités infinies",
   "Home.BannerSection.Description": "Wambi est une plateforme de réseautage social qui offre un mélange transparent de réseaux sociaux et commerciaux en un seul point. Pour une expérience ultime, téléchargez notre application mobile !",
@@ -44,5 +49,8 @@
   "Home.Reviews.Reviews4.Role": "Utilisateur",
   "Home.Reviews.Reviews5": "The in-app messaging is a lifesaver for keeping in touch. It's a fantastic way to stay connected and share moments with loved ones.",
   "Home.Reviews.Reviews5.Role": "Utilisateur",
-  "Social.Title": "Social"
+  "Social.Title": "Social",
+  "Home.Footer.About": "Chez Wambi, nous sommes une équipe de personnes passionnées qui s'engagent à révolutionner la façon dont les gens se connectent, achètent et vendent sur le marché en ligne.\n la façon dont les gens se connectent, achètent et vendent sur le marché en ligne. Notre\n Notre vision est de créer une plateforme mondiale qui rapproche les acheteurs et les vendeurs, quelle que soit leur situation géographique,\nDerrière Wambi se trouve une équipe de professionnels divers et talentueux, chacun apportant sa propre expérience.\n Derrière Wambi se trouve une équipe de professionnels divers et talentueux, chacun apportant son expertise unique à la table. Des\n des développeurs visionnaires aux concepteurs créatifs, des spécialistes du marketing méticuleux au personnel d'assistance centré sur le client, nous travaillons avec des\n de support centré sur le client, nous travaillons ensemble de manière transparente pour livrer une\n une application mobile de pointe qui dépasse vos attentes.",
+  "Home.Footer.AboutTitle": "A Propos",
+  "Home.Footer.Address": "Adresse"
 }

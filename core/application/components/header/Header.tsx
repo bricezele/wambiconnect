@@ -19,14 +19,14 @@ interface IHeaderProps {
 const Header: React.FC<IHeaderProps> = ({}) => {
 
 
-    const isMobile = useMediaQuery(parseInt(deviceSizes.tablet))
+    const isMobile = useMediaQuery(parseInt(deviceSizes.laptop))
     const [isOpenMobileMenu, setIsOpenMobileMenu] = useState<boolean>(false)
     return (
         <>
             <HeaderDesktop menus={Data.menu} onOpenMenu={() => {
                 setIsOpenMobileMenu((state) => !state)
             }}/>
-            {isMobile && <HeaderMobile openMobileMenu={isOpenMobileMenu} onCloseMenu={() => {
+            {isMobile && <HeaderMobile menus={Data.menu} openMobileMenu={isOpenMobileMenu} onCloseMenu={() => {
                 setIsOpenMobileMenu((state) => !state)
             }}/>}
         </>

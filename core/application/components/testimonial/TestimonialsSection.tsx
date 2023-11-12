@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import {breakpoints, deviceSizes} from "@/themes/breakpoints";
+import {breakpoints} from "@/themes/breakpoints";
 // @ts-ignore
 import Fade from "react-reveal/Fade";
 import {FormattedMessage} from "react-intl";
@@ -34,7 +34,7 @@ const TestimonialsSection: React.FC<IReviewsSectionProps> = ({
     const sliderNavRef = useRef<Slider>(null)
 
     return (
-        <TestimonialSectionContainer>
+        <TestimonialSectionContainer id='testimonials'>
             <TestimonialSectionWrapper className='custom-container'>
                 <Fade left duration={700} delay={0}>
                     <TestimonialSlider className='testimonial-slider'>

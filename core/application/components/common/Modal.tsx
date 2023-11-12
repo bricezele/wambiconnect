@@ -5,10 +5,9 @@
  * @Author BRICE ZELE
  * @Date 30/09/2023
  */
-import React, {EventHandler, KeyboardEventHandler, PropsWithChildren, useEffect, useState} from "react";
+import React, {PropsWithChildren, useEffect, useState} from "react";
 import styled from "styled-components";
-import {disableBodyScroll, clearAllBodyScrollLocks, enableBodyScroll} from 'body-scroll-lock';
-import {breakpoints} from "@/themes/breakpoints";
+import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 
 interface IModalProps {
     toggleModal: () => void

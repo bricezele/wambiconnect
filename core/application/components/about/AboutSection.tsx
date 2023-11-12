@@ -8,10 +8,6 @@
 import React from "react";
 import styled from "styled-components";
 import dynamic from "next/dynamic";
-
-const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
-    ssr: false,
-});
 import {useIntl} from "react-intl";
 import {Row} from "@/core/application/components/common";
 import {Assets} from "@/core/application/constants/assets";
@@ -19,6 +15,10 @@ import {Assets} from "@/core/application/constants/assets";
 import Fade from 'react-reveal/Fade';
 import {Title3} from "@/core/application/components/common/Title";
 import {breakpoints} from "@/themes/breakpoints";
+
+const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
+    ssr: false,
+});
 
 interface IAboutItem {
     title: string

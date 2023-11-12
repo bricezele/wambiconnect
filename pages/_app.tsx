@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import {IntlProvider} from 'react-intl'
 import type {AppProps} from 'next/app'
-import dynamic from "next/dynamic"
 import localesFr from '../locales/fr.json'
 import localesEn from '../locales/en.json'
 import styled, {ThemeProvider} from 'styled-components'

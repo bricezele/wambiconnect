@@ -5,7 +5,6 @@
  * @Author BRICE ZELE
  * @Date 06/08/2023
  */
-import styled from "styled-components";
 import css from "styled-jsx/css";
 
 const TransitionStyle = css`

@@ -5,7 +5,7 @@
  * @Author BRICE ZELE
  * @Date 15/09/2023
  */
-import React, {LazyExoticComponent, PropsWithChildren} from "react";
+import React, {PropsWithChildren} from "react";
 import dynamic from "next/dynamic"
 import {ColorScheme} from "@/core/domain/enums/ColorScheme";
 import useLocalStorage from "@/core/application/hooks/useLocalStorage";

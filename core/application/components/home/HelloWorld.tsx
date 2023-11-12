@@ -1,22 +1,22 @@
 import React from 'react'
-import { useIntl } from 'react-intl'
+import {useIntl} from 'react-intl'
 import styled from 'styled-components'
-import { Assets } from '../../constants/assets'
-import { testIds } from '../../constants/testIds'
+import {Assets} from '../../constants/assets'
+import {testIds} from '../../constants/testIds'
 
 export interface IHelloWordProps {
-  name: string
+    name: string
 }
 
-const HelloWorld: React.FC<IHelloWordProps> = ({ name }) => {
-  const { formatMessage } = useIntl()
+const HelloWorld: React.FC<IHelloWordProps> = ({name}) => {
+    const {formatMessage} = useIntl()
 
-  return (
-    <Container>
-      <Title>{formatMessage({ id: 'HomePage.Greetings' }, { name })}</Title>
-      <Image src={Assets.images.logo} data-testid={testIds.components.helloWorld.image} />
-    </Container>
-  )
+    return (
+        <Container>
+            <Title>{formatMessage({id: 'HomePage.Greetings'}, {name})}</Title>
+            <Image src={Assets.images.logo} data-testid={testIds.components.helloWorld.image}/>
+        </Container>
+    )
 }
 
 const Container = styled.div`

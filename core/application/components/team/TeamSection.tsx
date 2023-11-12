@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Paragraph, Title3} from "@/core/application/components/common/Title";
+import {Title3} from "@/core/application/components/common/Title";
 import {breakpoints} from "@/themes/breakpoints";
 
 /**
@@ -23,7 +23,7 @@ interface ITeamSectionProps {
 const TeamSection: React.FC<ITeamSectionProps> = ({}) => {
 
     return (
-        <Container className='news'>
+        <Container className='news' id='team'>
             <Background/>
             <Wrapper className='custom-container'>
                 <Header>
@@ -38,16 +38,10 @@ const TeamSection: React.FC<ITeamSectionProps> = ({}) => {
                                 <TeamItemDetailContainer>
                                     <TeamItemDetailWrapper>
                                         <TeamAuthor>Romuald Esdras Wandji</TeamAuthor>
-                                        <TeamRole>CEO and Software Developer</TeamRole>
+                                        <TeamRole>CEO & Software Developer</TeamRole>
                                         <TeamSocialContainer>
-                                            <TeamSocial href='#'>
-                                                <i className='mdi mdi-twitter'/>
-                                            </TeamSocial>
-                                            <TeamSocial href='#'>
-                                                <i className='mdi mdi-twitter'/>
-                                            </TeamSocial>
-                                            <TeamSocial href='#'>
-                                                <i className='mdi mdi-twitter'/>
+                                            <TeamSocial href='https://nl.linkedin.com/in/romuald-wandji-26649a10'>
+                                                <i className='mdi mdi-linkedin'/>
                                             </TeamSocial>
                                         </TeamSocialContainer>
                                     </TeamItemDetailWrapper>
@@ -61,16 +55,16 @@ const TeamSection: React.FC<ITeamSectionProps> = ({}) => {
                                 <TeamItemDetailContainer>
                                     <TeamItemDetailWrapper>
                                         <TeamAuthor>Brice Zele</TeamAuthor>
-                                        <TeamRole>Co-Founder and Software Developer</TeamRole>
+                                        <TeamRole>Co-Founder & Software Developer</TeamRole>
                                         <TeamSocialContainer>
                                             <TeamSocial href='#'>
                                                 <i className='mdi mdi-twitter'/>
                                             </TeamSocial>
                                             <TeamSocial href='#'>
-                                                <i className='mdi mdi-twitter'/>
+                                                <i className='mdi mdi-linkedin'/>
                                             </TeamSocial>
                                             <TeamSocial href='#'>
-                                                <i className='mdi mdi-twitter'/>
+                                                <i className='mdi mdi-web'/>
                                             </TeamSocial>
                                         </TeamSocialContainer>
                                     </TeamItemDetailWrapper>
@@ -84,16 +78,29 @@ const TeamSection: React.FC<ITeamSectionProps> = ({}) => {
                                 <TeamItemDetailContainer>
                                     <TeamItemDetailWrapper>
                                         <TeamAuthor>Emerson N. Wepngong</TeamAuthor>
-                                        <TeamRole>Co-Founder and Product Designer</TeamRole>
+                                        <TeamRole>Co-founder & Project Manager</TeamRole>
                                         <TeamSocialContainer>
-                                            <TeamSocial href='#'>
-                                                <i className='mdi mdi-twitter'/>
+                                            <TeamSocial
+                                                href='https://www.linkedin.com/in/emerson-n-wepngong-md-mph-msc-health-econs-b1a4b69b/'>
+                                                <i className='mdi mdi-linkedin'/>
                                             </TeamSocial>
-                                            <TeamSocial href='#'>
-                                                <i className='mdi mdi-twitter'/>
-                                            </TeamSocial>
-                                            <TeamSocial href='#'>
-                                                <i className='mdi mdi-twitter'/>
+                                        </TeamSocialContainer>
+                                    </TeamItemDetailWrapper>
+                                </TeamItemDetailContainer>
+                            </TeamItemWrapper>
+                        </TeamItem>
+                        <TeamItem>
+                            <TeamItemWrapper>
+                                <TeamItemImage
+                                    src='https://media.licdn.com/dms/image/C4E03AQHF0NTzz2dASA/profile-displayphoto-shrink_200_200/0/1650208696738?e=2147483647&v=beta&t=DQUK1oqlkpBuLnYlRXBI2_XkuttYJuQ7ZBx6NvsOinw'/>
+                                <TeamItemDetailContainer>
+                                    <TeamItemDetailWrapper>
+                                        <TeamAuthor>Christiane Gouaffo</TeamAuthor>
+                                        <TeamRole>Marketing Manager</TeamRole>
+                                        <TeamSocialContainer>
+                                            <TeamSocial
+                                                href='https://www.linkedin.com/in/christiane-gouaffo-00b17a164'>
+                                                <i className='mdi mdi-linkedin'/>
                                             </TeamSocial>
                                         </TeamSocialContainer>
                                     </TeamItemDetailWrapper>
@@ -154,14 +161,13 @@ const TeamRow = styled.div`
   flex-basis: auto;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: 0;
 
   @media ${breakpoints.tablet} {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media ${breakpoints.laptop} {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 `
 const TeamItem = styled.div`
@@ -189,11 +195,6 @@ const TeamItemDetailContainer = styled.div`
   width: 254px;
   min-height: 166px;
   margin: 0 auto;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: 100%;
-  background-color: #333333;
   text-align: center;
   display: flex;
 `
@@ -210,6 +211,7 @@ const TeamAuthor = styled.h5`
   font-weight: 400;
   margin: 0;
   color: #fff;
+  background-color: #333333;
 `
 const TeamRole = styled.h4`
   font-size: 18px;
@@ -225,7 +227,6 @@ const TeamSocialContainer = styled.div`
   display: flex;
 `
 const TeamSocial = styled.a`
-
   outline-width: 0;
   margin: 0;
   flex: 1;

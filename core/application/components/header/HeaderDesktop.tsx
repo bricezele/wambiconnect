@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React from "react"
 import styled from "styled-components"
 import LinkWrapper from "@/core/application/components/common/LinkWrapper";
 import {NavRoute, Routes} from "@/core/application/constants/routes";
@@ -17,7 +17,7 @@ import HeaderLocaleSelect from "@/core/application/components/header/HeaderLocal
  * @Author BRICE ZELE
  * @Date 06/08/2023
  */
-interface IMenu {
+export interface IMenu {
     link: NavRoute,
     label: string
 }
@@ -25,7 +25,6 @@ interface IMenu {
 interface IHeaderProps {
     onOpenMenu: () => void
     menus: IMenu[]
-
 }
 
 const HeaderDesktop: React.FC<IHeaderProps> = ({onOpenMenu, menus}) => {

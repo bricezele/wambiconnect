@@ -33,7 +33,7 @@ const ServiceSection: React.FC<IServiceSectionProps> = ({
                                                         }) => {
 
     return (
-        <ServiceContainer className='services'>
+        <ServiceContainer className='services' id='services'>
             <ServiceBackground/>
             <ServiceWrapper className='custom-container'>
                 <ServiceSubContainer>

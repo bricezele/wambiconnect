@@ -9,14 +9,20 @@ import React, {useRef} from "react";
 import styled from "styled-components";
 import LinkWrapper from "@/core/application/components/common/LinkWrapper";
 import HeaderLocaleSelect from "@/core/application/components/header/HeaderLocaleSelect";
+import {IMenu} from "@/core/application/components/header/HeaderDesktop";
+import {Routes} from "@/core/application/constants/routes";
+import {Locale} from "@/core/domain/enums/Locale";
+import {FormattedMessage, useIntl} from "react-intl";
 
 interface IHeaderMobileProps {
     openMobileMenu?: boolean
     onCloseMenu: () => void
+    menus: IMenu[]
 }
 
-const HeaderMobile: React.FC<IHeaderMobileProps> = ({openMobileMenu = false, onCloseMenu}) => {
+const HeaderMobile: React.FC<IHeaderMobileProps> = ({openMobileMenu = false, onCloseMenu, menus}) => {
     const containerRef = useRef<HTMLDivElement>(null)
+    const {locale} = useIntl()
     return (
         <HeaderContainer ref={containerRef}
                          className={`responsive-mobile-menu ${openMobileMenu ? 'active' : ''}`}>
@@ -25,22 +31,22 @@ const HeaderMobile: React.FC<IHeaderMobileProps> = ({openMobileMenu = false, onC
             </CloseButton>
             <MobileMenu>
                 <MenuList>
-                    <MenuItem>
-                        <Link href={'/'}>Features</Link>
-                    </MenuItem>
-                    <MenuItem>
-                        <Link href={'/'}>Features</Link>
-                    </MenuItem>
-                    <MenuItem>
-                        <Link href={'/'}>Features</Link>
-                    </MenuItem>
-                    <MenuItem>
-                        <Link href={'/'}>Features</Link>
-                    </MenuItem>
+                    {
+                        menus.map((menu, index) => (
+                            <MenuItem key={index}>
+                                <LinkWrapper
+                                    onClick={onCloseMenu}
+                                    href={Routes[locale as Locale][menu.link]()}><FormattedMessage
+                                    id={menu.label}/>
+                                </LinkWrapper>
+                            </MenuItem>
+                        ))
+                    }
                 </MenuList>
             </MobileMenu>
             <SocialLinksContainer>
-                <li><a href="#" title=""><i className="mdi mdi-facebook"></i></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100073036887775" title="Facebook"><i
+                    className="mdi mdi-facebook"></i></a></li>
                 <li><a href="#" title=""><i className="mdi mdi-twitter"></i></a></li>
                 <li><a href="#" title=""><i className="mdi mdi-instagram"></i></a></li>
                 <li><HeaderLocaleSelect isHeaderContentWhite={false}/></li>

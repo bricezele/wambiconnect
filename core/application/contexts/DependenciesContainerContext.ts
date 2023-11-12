@@ -1,5 +1,5 @@
 import React from 'react'
-import { createDependencies, Dependencies } from '../dependencies'
+import {createDependencies, Dependencies} from '../dependencies'
 
 export const DependenciesContainerContext = React.createContext<Dependencies>(createDependencies())
 

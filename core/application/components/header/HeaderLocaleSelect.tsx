@@ -9,11 +9,10 @@ import React, {useCallback, useState} from 'react'
 import {useIntl} from 'react-intl'
 import styled from 'styled-components'
 import {Assets} from '../../constants/assets'
-import {NavRoute, Routes} from '../../constants/routes'
+import {Routes} from '../../constants/routes'
 import router from 'next/router'
 import Icon from "@/core/application/components/common/Icon";
 import {Locale} from "@/core/domain/enums/Locale";
-import {DEFAULT_LOCALE} from "@/core/constants";
 import {usePageInfo} from "@/core/application/contexts/PageInfoContext";
 
 // Component definition

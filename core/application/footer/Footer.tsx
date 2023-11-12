@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {Paragraph, Title3} from "@/core/application/components/common/Title";
+import {useIntl} from "react-intl";
 
 /**
  * @Project wambi-connect
@@ -14,34 +15,30 @@ interface IFooterProps {
 }
 
 const Footer: React.FC<IFooterProps> = ({}) => {
+    const intl = useIntl()
     return (
         <Container>
             <TopContainer>
                 <Background/>
-                <Wrapper>
+                <Wrapper className='custom-container'>
                     <FulltWidth>
                         <div className='row'>
                             <div className='col-lg-6 col-md-6'>
                                 <FulltWidth>
-                                    <TitleFooter>About</TitleFooter>
-                                    <ParagraphFooter>
-                                        At Wambi, we are a team of passionate individuals committed to revolutionizing
-                                        the way people connect, buy, and sell in the online marketplace industry. Our
-                                        vision is to create a global platform that brings buyers and sellers together,
-                                        regardless of their geographic location.Behind Wambi is a diverse and talented
-                                        team of professionals, each bringing their unique expertise to the table. From
-                                        visionary developers to creative designers, meticulous marketers to
-                                        customer-centric support staff, we work seamlessly together to deliver a
-                                        cutting-edge mobile app that exceeds your expectations.
-                                    </ParagraphFooter>
+                                    <TitleFooter>{intl.formatMessage({id: 'Home.Footer.AboutTitle'})}</TitleFooter>
+                                    <ParagraphFooter>{intl.formatMessage({id: 'Home.Footer.About'})}</ParagraphFooter>
                                 </FulltWidth>
                             </div>
                             <div className='col-lg-6 col-md-6'>
                                 <FulltWidth>
                                     <TitleFooter>Contacts</TitleFooter>
                                     <ContactList>
-                                        <li>Address: Cite sic - A COTE SANTA LUCIA Douala, Cameroon.</li>
-                                        <li>Address: 1A Hughes Ave, Yaba, Lagos, Nigeria.</li>
+                                        <li>{intl.formatMessage({id: 'Home.Footer.Address'})}: Cite sic - A COTE SANTA
+                                            LUCIA Douala, Cameroon.
+                                        </li>
+                                        <li>{intl.formatMessage({id: 'Home.Footer.Address'})}: 1A Hughes Ave, Yaba,
+                                            Lagos, Nigeria.
+                                        </li>
                                         <li>Email: support@wambi.cc</li>
                                     </ContactList>
                                 </FulltWidth>
@@ -74,6 +71,7 @@ const Footer: React.FC<IFooterProps> = ({}) => {
 export default Footer
 const Container = styled.footer`
   width: 100%;
+
 `
 
 const TopContainer = styled.div`
@@ -105,6 +103,7 @@ const Wrapper = styled.div`
 `
 const FulltWidth = styled.div`
   width: 100%;
+  row-gap: 10px;
 `
 const TitleFooter = styled(Title3)`
   font-size: 24px;

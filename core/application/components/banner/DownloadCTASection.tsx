@@ -1,7 +1,7 @@
 import {ICTAProps} from "@/core/application/components/banner/BannerSection";
 import React from "react";
 import styled from "styled-components";
-import {Column, Row} from "@/core/application/components/common";
+import {Column} from "@/core/application/components/common";
 import {Paragraph, Title3} from "@/core/application/components/common/Title";
 import {breakpoints, deviceSizes} from "@/themes/breakpoints";
 import {useIntl} from "react-intl";

@@ -13,6 +13,21 @@ export const Data = {
         {
             link: NavRoute.HOME,
             label: 'Home.Title'
+        }, {
+            link: NavRoute.FEATURE,
+            label: 'Home.Feature'
+        }, {
+            link: NavRoute.COUNTER,
+            label: 'Home.Counter'
+        }, {
+            link: NavRoute.FUNCTIONNALITIES,
+            label: 'Home.Functionnalities'
+        }, {
+            link: NavRoute.TESTIMONIAL,
+            label: 'Home.Testimonial'
+        }, {
+            link: NavRoute.TEAM,
+            label: 'Home.Team'
         }
     ],
     home: {
@@ -160,6 +175,9 @@ export const Data = {
                 role: 'Home.Reviews.Reviews5.Role',
                 review: 'Home.Reviews.Reviews5'
             },
-        ]
+        ],
+        footerSection: {
+            about: ''
+        }
     }
 }
